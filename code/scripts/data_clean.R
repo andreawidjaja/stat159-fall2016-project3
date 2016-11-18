@@ -1,16 +1,18 @@
 library(dplyr)
-library(stringr)
 #----------------------------------------------------------------------
 
 #Read data set
 data <- read.csv('../../data/MERGED2014_15_PP.csv')
+na.omit(data)
+head(data)
 
 #Data cleaning
 selected_data <- data %>%
-  filter(grepl("3", SCH_DEG)) %>% #Degree awarded predominantly bachelor
-  filter(grepl("1", MAIN)) %>% #Main campus
-  filter(grepl("1", CONTROL)) #Public schools
+  filter(SCH_DEG == 3) %>% #Degree awarded predominantly bachelor
+  filter(MAIN == 1) %>% #Main campus
+  filter(CONTROL == 1) #Public schools
 na.omit(selected_data)
+head(selected_data)
 
 #Variables we are going to use
 x_variables <- selected_data %>%
