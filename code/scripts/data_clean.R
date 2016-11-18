@@ -3,20 +3,16 @@ library(dplyr)
 
 #Read data set
 data <- read.csv('../../data/MERGED2014_15_PP.csv')
-na.omit(data)
-head(data)
 
 #Data cleaning
 selected_data <- data %>%
-  filter(SCH_DEG == 3) %>% #Degree awarded predominantly bachelor
+  filter(PREDDEG == 3) %>% #Degree awarded predominantly bachelor
   filter(MAIN == 1) %>% #Main campus
   filter(CONTROL == 1) #Public schools
-na.omit(selected_data)
-head(selected_data)
 
 #Variables we are going to use
 x_variables <- selected_data %>%
-  select(UNITID, INSTNM, CITY, ZIP, ST_FIPS, REGION, LOCALE2, ADM_RATE, ADM_RATE_ALL, SATVR25, SATVR75, SATMT25, SATMT75, SATWR25,
+  select(UNITID, PREDDEG, MAIN, CONTROL, INSTNM, CITY, ZIP, ST_FIPS, REGION, LOCALE2, ADM_RATE, ADM_RATE_ALL, SATVR25, SATVR75, SATMT25, SATMT75, SATWR25,
          SATWR75, SATVRMID, SATMTMID, SATWRMID, ACTCM25, ACTCM75, ACTEN25, ACTEN75, ACTMT25, ACTMT75, ACTWR25, ACTWR75, ACTCMMID,
          ACTENMID, ACTMTMID, ACTWRMID, SAT_AVG, SAT_AVG_ALL, PCIP01, PCIP03, PCIP04, PCIP05, PCIP09, PCIP10, PCIP11, PCIP12, PCIP13,
          PCIP14, PCIP15, PCIP16, PCIP19, PCIP22, PCIP23, PCIP24, PCIP25, PCIP26, PCIP27, PCIP29, PCIP30, PCIP31, PCIP38, PCIP39,
@@ -26,7 +22,6 @@ x_variables <- selected_data %>%
          IND_YR4_N, FEMALE_YR4_N, MALE_YR4_N, FIRSTGEN_YR4_N, NOT1STGEN_YR4_N, OVERALL_YR6_N, LO_INC_YR6_N, MD_INC_YR6_N, HI_INC_YR6_N,
          DEP_YR6_N, IND_YR6_N, FEMALE_YR6_N, MALE_YR6_N, FIRSTGEN_YR6_N, NOT1STGEN_YR6_N, AGE_ENTRY, AGEGE24, FEMALE, MARRIED, DEPENDENT,
          VETERAN, FIRST_GEN)
-na.omit(x_variables)
 
 y_variables <- selected_data %>%
   select(INSTNM, COMP_ORIG_YR6_RT, COMP_4YR_TRANS_YR6_RT, LO_INC_COMP_ORIG_YR6_RT, LO_INC_COMP_4YR_TRANS_YR6_RT, MD_INC_COMP_ORIG_YR6_RT,
@@ -34,13 +29,11 @@ y_variables <- selected_data %>%
          IND_COMP_ORIG_YR6_RT, IND_COMP_4YR_TRANS_YR6_RT, FEMALE_COMP_ORIG_YR6_RT, FEMALE_COMP_4YR_TRANS_YR6_RT, MALE_COMP_ORIG_YR6_RT,
          MALE_COMP_4YR_TRANS_YR6_RT, FIRSTGEN_COMP_ORIG_YR6_RT, FIRSTGEN_COMP_4YR_TRANS_YR6_RT, NOT1STGEN_COMP_ORIG_YR6_RT,
          NOT1STGEN_COMP_4YR_TRANS_YR6_RT)
-na.omit(y_variables)
 
 race_and_income <- selected_data %>%
   select(INSTNM, UGDS, UG, UGDS_WHITE, UGDS_BLACK, UGDS_HISP, UGDS_ASIAN, UGDS_AIAN, UGDS_NHPI, UGDS_2MOR, UGDS_NRA, UGDS_UNKN, UGDS_WHITENH,
          UGDS_BLACKNH, UGDS_API, UGDS_AIANOLD, UGDS_HISPOLD, UG_NRA, UG_UNKN, UG_WHITENH, UG_BLACKNH, UG_API, UG_AIANOLD, UG_HISPOLD,
          PPTUG_EF, PPTUG_EF2, CURROPER, NPT4_048_PUB, NPT4_3075_PUB, NPT4_75UP_PUB)
-na.omit(race_and_income)
 
 merge_1 <- merge(x_variables, y_variables, by = "INSTNM")
 clean_data <- merge(merge_1, race_and_income, by = "INSTNM")
