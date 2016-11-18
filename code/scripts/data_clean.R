@@ -43,6 +43,6 @@ na.omit(race_and_income)
 merge_1 <- merge(x_variables, y_variables, by = "INSTNM")
 clean_data <- merge(merge_1, race_and_income, by = "INSTNM")
 
-save(clean_data, file = '../../data/clean_data.csv')
+write.csv(clean_data, file = '../../data/clean_data.csv')
 
 
