@@ -2,7 +2,8 @@ library(dplyr)
 #----------------------------------------------------------------------
 
 #Read data set
-data <- read.csv('../../data/MERGED2014_15_PP.csv')
+args<-command_args(trailingOnly=TRUE)
+data <- read.csv(args[1])
 
 #Data cleaning
 selected_data <- data %>%
@@ -38,6 +39,6 @@ race_and_income <- selected_data %>%
 merge_1 <- merge(x_variables, y_variables, by = "INSTNM")
 clean_data <- merge(merge_1, race_and_income, by = "INSTNM")
 
-write.csv(clean_data, file = '../../data/clean_data.csv')
+write.csv(clean_data, file = 'data/clean_data.csv')
 
 
