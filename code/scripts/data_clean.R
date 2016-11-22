@@ -2,7 +2,7 @@ library(dplyr)
 #----------------------------------------------------------------------
 
 #Read data set
-args<-command_args(trailingOnly=TRUE)
+args<-commandArgs(trailingOnly=TRUE)
 data <- read.csv(args[1])
 
 #Data cleaning
