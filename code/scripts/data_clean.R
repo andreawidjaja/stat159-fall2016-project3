@@ -1,5 +1,8 @@
 library(dplyr)
 #----------------------------------------------------------------------
+#setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3/code/scripts")
+#data=read.csv("../../data/MERGED2014_15_PP.csv")
+#clean_data=read.csv("../../data/clean_data.csv")
 
 #Read data set
 args<-commandArgs(trailingOnly=TRUE)
@@ -39,6 +42,8 @@ race_and_income <- selected_data %>%
 merge_1 <- merge(x_variables, y_variables, by = "INSTNM")
 clean_data <- merge(merge_1, race_and_income, by = "INSTNM")
 
-write.csv(clean_data, file = 'data/clean_data.csv')
-
+write.csv(clean_data, file = '../../data/clean_data.csv')
+write.csv(race_and_income, file='../../data/race_and_income.csv')
+write.csv(y_variables, file='../../data/y_variables.csv')
+write.csv(x_variables, file='../../data/x_variables.csv')
 
