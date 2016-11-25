@@ -49,7 +49,7 @@ for(i in 1:ncol(clean_data)){
 }
 
 #Converting types of variables that don't make any sense (and getting rid of some variables)
-clean_data$PREDDEG=as.factor(data_clean$PREDDEG) #PREDDEG tells us the predominant type of degree given in a univ
+clean_data$PREDDEG=as.factor(clean_data$PREDDEG) #PREDDEG tells us the predominant type of degree given in a univ
 clean_data$CITY=NULL  #Don't need city variable in my opinion
 clean_data$ZIP=NULL #Don't need zip code variable in my opinion
 clean_data$ST_FIPS= as.factor(clean_data$ST_FIPS) #State should not be an integer variable
@@ -58,12 +58,20 @@ clean_data$REGION= as.factor(clean_data$REGION) #Region should not be an integer
 clean_data$LOCALE2=NULL # Too many NULL values here 
 clean_data$ADM_RATE=as.numeric(clean_data$ADM_RATE) #admission rates shouldnt be a factor
 clean_data$ADM_RATE_ALL=NULL #no need for two admission rates... 99% correlation between above adm rate
-clean_data[,13:90]=apply(clean_data[,13:90], 2, as.numeric) #converting all sat/act scores and percentage of people in certain degrees into numeric variables
-clean_data[,91:100]=NULL
+clean_data[,13:85]=apply(clean_data[,13:85], 2, as.numeric) #converting all sat/act scores and percentage of people in certain degrees into numeric variables
+clean_data[,c(86:105,107,114:133,135,145:156,158)]=NULL #Removing variables with several Null values
+clean_data[,86:ncol(clean_data)]=apply(clean_data[,86:ncol(clean_data)], 2, as.numeric) #converting all these factors  into numeric variables
+clean_data$CURROPER=NULL #Takes on only 1 variable 
 
+#scaling non-categorical variables
+for (i in c(2,4,5,7,13:ncol(clean_data))){
+  clean_data[,i]=scale(clean_data[,i])
+}
+#getting rid of 2 more useless variables
+clean_data$INSTNM=NULL
+clean_data$UNITID=NULL
 
 #clean race and income and y and x variables
-
 write.csv(clean_data, file = '../../data/clean_data.csv')
 write.csv(race_and_income, file='../../data/race_and_income.csv')
 write.csv(y_variables, file='../../data/y_variables.csv')
