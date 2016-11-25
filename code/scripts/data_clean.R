@@ -42,6 +42,28 @@ race_and_income <- selected_data %>%
 merge_1 <- merge(x_variables, y_variables, by = "INSTNM")
 clean_data <- merge(merge_1, race_and_income, by = "INSTNM")
 
+#Checking to see variable types
+v=vector()
+for(i in 1:ncol(clean_data)){
+  v[i]=class(clean_data[,i])
+}
+
+#Converting types of variables that don't make any sense (and getting rid of some variables)
+clean_data$PREDDEG=as.factor(data_clean$PREDDEG) #PREDDEG tells us the predominant type of degree given in a univ
+clean_data$CITY=NULL  #Don't need city variable in my opinion
+clean_data$ZIP=NULL #Don't need zip code variable in my opinion
+clean_data$ST_FIPS= as.factor(clean_data$ST_FIPS) #State should not be an integer variable
+clean_data$ST_FIPS=NULL #Don't need state variable when we have a region variable 
+clean_data$REGION= as.factor(clean_data$REGION) #Region should not be an integer variable
+clean_data$LOCALE2=NULL # Too many NULL values here 
+clean_data$ADM_RATE=as.numeric(clean_data$ADM_RATE) #admission rates shouldnt be a factor
+clean_data$ADM_RATE_ALL=NULL #no need for two admission rates... 99% correlation between above adm rate
+clean_data[,13:90]=apply(clean_data[,13:90], 2, as.numeric) #converting all sat/act scores and percentage of people in certain degrees into numeric variables
+clean_data[,91:100]=NULL
+
+
+#clean race and income and y and x variables
+
 write.csv(clean_data, file = '../../data/clean_data.csv')
 write.csv(race_and_income, file='../../data/race_and_income.csv')
 write.csv(y_variables, file='../../data/y_variables.csv')

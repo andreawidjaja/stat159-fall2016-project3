@@ -11,3 +11,4 @@ relevant_cols=which(colnames(clean_data) %in% colnames(clean_data)[-which(colnam
 clean_data=clean_data[,relevant_cols] 
 
 
+reg=lm(UGDS_BLACK~., data=clean_data)
