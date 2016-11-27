@@ -1,8 +1,8 @@
-library(dplyr)
 #----------------------------------------------------------------------
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3/code/scripts")
 #data=read.csv("../../data/MERGED2014_15_PP.csv")
 #clean_data=read.csv("../../data/clean_data.csv")
+library(dplyr)
 
 #Read data set
 args<-commandArgs(trailingOnly=TRUE)
@@ -67,9 +67,12 @@ clean_data$CURROPER=NULL #Takes on only 1 variable
 for (i in c(2,4,5,7,13:ncol(clean_data))){
   clean_data[,i]=scale(clean_data[,i])
 }
-#getting rid of 2 more useless variables
+
+#getting rid of 4 more useless variables
 clean_data$INSTNM=NULL
 clean_data$UNITID=NULL
+clean_data$MAIN=NULL #all of our schools are main campuses
+clean_data$CONTROL=NULL # all of our schools are public
 
 #clean race and income and y and x variables
 write.csv(clean_data, file = '../../data/clean_data.csv')
