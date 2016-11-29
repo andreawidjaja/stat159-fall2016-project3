@@ -7,7 +7,9 @@ ui <- fluidPage(
   actionButton("click", label="Generate Relevant Variables"), #Creating an action button 
   textInput("text", label = h3("Text input"), value = "Lasso, BIC, P-Value"), #Creating an input widget
   radioButtons("Select Graduation Rate of Interest", label = h3("Radio buttons"),
-               choices = list("Overall Graduation Rate" = "UGDS", "Choice 2" = 2, "Choice 3" = 3), 
+               choices = list("Overall Graduation Rate" = "UGDS", "Graduation Rates of White People" = "UGDS_WHITE", "Graduation Rates of Black People" = "UGDS_BLACK",
+                              "Graduation Rates of Hispanic People"="UGDS_HISP", "GRADUATION RATES OF ASIAN PEOPLE"="UGDS_ASIAN", ="UGDS_AIAN",
+                              ="UGDS_NHPI", ="UGDS_2MOR", ="UGDS_NRA", ="UGDS_UNKN"), 
                selected = 1),
   
   numericInput("var_num", label=h3("Number of Variables"), value=1:10),
