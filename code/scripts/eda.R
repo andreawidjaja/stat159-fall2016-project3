@@ -2,6 +2,13 @@ library(dplyr)
 
 #Read data sets
 clean_data <- read.csv('../../data/clean_data.csv')
+data <- read.csv('../../data/MERGED2014_15_PP.csv')
+
+#Selecting data
+selected_data <- data %>%
+  filter(PREDDEG == 3) %>% #Degree awarded predominantly bachelor
+  filter(MAIN == 1) %>% #Main campus
+  filter(CONTROL == 1) #Public schools
 
 #Quantitative variables
 quantitative <- clean_data %>%
@@ -51,7 +58,7 @@ dev.off()
 png("../../images/histogram_net_price.png")
 hist(clean_data$TUITIONFEE_IN)
 dev.off()
-#histogram of in-state tuition and fees
+#histogram of out-of-state tuition and fees
 png("../../images/histogram_net_price.png")
 hist(clean_data$TUITIONFEE_OUT)
 dev.off()
@@ -61,12 +68,10 @@ hist(clean_data$AVGFACSAL)
 dev.off()
 
 #Summary statistics of qualitative variables
-
-
-
+png("../../images/histogram_region.png")
+hist(selected_data$REGION)
+dev.off()
 
 #Correlation Matrix
 matrix <- cor(clean_data)
-print(matrix)
-sink()
 save(matrix, file = "../../data/correlation_matrix.RData")
