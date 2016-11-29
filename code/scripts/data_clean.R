@@ -4,21 +4,21 @@
 #clean_data=read.csv("../../data/clean_data.csv")
 library(dplyr)
 
-#Read data set
+#read data set
 args<-commandArgs(trailingOnly=TRUE)
 data <- read.csv(args[1])
 
-#Data cleaning
+#data cleaning
 selected_data <- data %>%
   filter(PREDDEG == 3) %>% #Degree awarded predominantly bachelor
   filter(MAIN == 1) %>% #Main campus
   filter(CONTROL == 1) #Public schools
 
-#Variables we are going to use
+#variables we are going to use
 x_variables <- selected_data %>%
-  select(UNITID, PREDDEG, MAIN, CONTROL, INSTNM, CITY, ZIP, ST_FIPS, REGION, LOCALE2, ADM_RATE, ADM_RATE_ALL, SATVR25, SATVR75, SATMT25, SATMT75, SATWR25,
+  select(UNITID, PREDDEG, MAIN, CONTROL, INSTNM, CITY, ZIP, ST_FIPS, REGION, LOCALE2, ADM_RATE, SATVR25, SATVR75, SATMT25, SATMT75, SATWR25,
          SATWR75, SATVRMID, SATMTMID, SATWRMID, ACTCM25, ACTCM75, ACTEN25, ACTEN75, ACTMT25, ACTMT75, ACTWR25, ACTWR75, ACTCMMID,
-         ACTENMID, ACTMTMID, ACTWRMID, SAT_AVG, SAT_AVG_ALL, PCIP01, PCIP03, PCIP04, PCIP05, PCIP09, PCIP10, PCIP11, PCIP12, PCIP13,
+         ACTENMID, ACTMTMID, ACTWRMID, SAT_AVG, PCIP01, PCIP03, PCIP04, PCIP05, PCIP09, PCIP10, PCIP11, PCIP12, PCIP13,
          PCIP14, PCIP15, PCIP16, PCIP19, PCIP22, PCIP23, PCIP24, PCIP25, PCIP26, PCIP27, PCIP29, PCIP30, PCIP31, PCIP38, PCIP39,
          PCIP40, PCIP41, PCIP42, PCIP43, PCIP44, PCIP45, PCIP46, PCIP47, PCIP48, PCIP49, PCIP50, PCIP51, PCIP52, PCIP54, NPT4_PUB,
          NPT41_PUB, NPT42_PUB, NPT43_PUB, NPT44_PUB, NPT45_PUB, NUM4_PUB, NUM41_PUB, NUM42_PUB, NUM43_PUB, NUM44_PUB, NUM45_PUB,
@@ -42,26 +42,25 @@ race_and_income <- selected_data %>%
 merge_1 <- merge(x_variables, y_variables, by = "INSTNM")
 clean_data <- merge(merge_1, race_and_income, by = "INSTNM")
 
-#Checking to see variable types
+#checking to see variable types
 v=vector()
 for(i in 1:ncol(clean_data)){
   v[i]=class(clean_data[,i])
 }
 
-#Converting types of variables that don't make any sense (and getting rid of some variables)
+#converting types of variables that don't make any sense (and getting rid of some variables)
 clean_data$PREDDEG=as.factor(clean_data$PREDDEG) #PREDDEG tells us the predominant type of degree given in a univ
 clean_data$CITY=NULL  #Don't need city variable in my opinion
 clean_data$ZIP=NULL #Don't need zip code variable in my opinion
 clean_data$ST_FIPS= as.factor(clean_data$ST_FIPS) #State should not be an integer variable
-clean_data$ST_FIPS=NULL #Don't need state variable when we have a region variable 
+clean_data$ST_FIPS=NULL #Don't need state variable when we have a region variable
 clean_data$REGION= as.factor(clean_data$REGION) #Region should not be an integer variable
-clean_data$LOCALE2=NULL # Too many NULL values here 
-clean_data$ADM_RATE=as.numeric(clean_data$ADM_RATE) #admission rates shouldnt be a factor
-clean_data$ADM_RATE_ALL=NULL #no need for two admission rates... 99% correlation between above adm rate
-clean_data[,13:85]=apply(clean_data[,13:85], 2, as.numeric) #converting all sat/act scores and percentage of people in certain degrees into numeric variables
+clean_data$LOCALE2=NULL #Too many NULL values here
+clean_data$ADM_RATE=as.numeric(clean_data$ADM_RATE) #Admission rates shouldn't be a factor
+clean_data[,13:85]=apply(clean_data[,13:85], 2, as.numeric) #Converting all sat/act scores and percentage of people in certain degrees into numeric variables
 clean_data[,c(86:105,107,114:133,135,145:156,158)]=NULL #Removing variables with several Null values
-clean_data[,86:ncol(clean_data)]=apply(clean_data[,86:ncol(clean_data)], 2, as.numeric) #converting all these factors  into numeric variables
-clean_data$CURROPER=NULL #Takes on only 1 variable 
+clean_data[,86:ncol(clean_data)]=apply(clean_data[,86:ncol(clean_data)], 2, as.numeric) #Converting all these factors into numeric variables
+clean_data$CURROPER=NULL #Takes on only 1 variable
 
 #scaling non-categorical variables
 for (i in c(2,4,5,7,13:ncol(clean_data))){
