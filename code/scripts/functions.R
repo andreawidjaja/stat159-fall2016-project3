@@ -7,7 +7,7 @@ library(glmnet)
 
 choosing_response=function(dataframe, character){
   response=which(colnames(dataframe)==character)
-  dataframe[,setdiff(96:105, response)]=NULL #getting rid of all graduation rates, except for black graduation rates
+  dataframe[,setdiff(95:101, response)]=NULL #getting rid of all graduation rates, except for black graduation rates
   dataframe= subset(dataframe, select=c(setdiff(1:ncol(dataframe),response), response))
   return(dataframe)
 }
