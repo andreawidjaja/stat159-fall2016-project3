@@ -28,7 +28,7 @@ x_variables <- selected_data %>%
          VETERAN, FIRST_GEN)
 
 y_variables <- selected_data %>%
-  select(INSTNM, C150_4, COMP_ORIG_YR6_RT, COMP_4YR_TRANS_YR6_RT, LO_INC_COMP_ORIG_YR6_RT, LO_INC_COMP_4YR_TRANS_YR6_RT, MD_INC_COMP_ORIG_YR6_RT,
+  select(INSTNM, C150_4, C150_4_HISP,C150_4_AIAN, C150_4_WHITE, C150_4_BLACK,C150_4_ASIAN, C150_4_NHPI, COMP_ORIG_YR6_RT, COMP_4YR_TRANS_YR6_RT, LO_INC_COMP_ORIG_YR6_RT, LO_INC_COMP_4YR_TRANS_YR6_RT, MD_INC_COMP_ORIG_YR6_RT,
          MD_INC_COMP_4YR_TRANS_YR6_RT, HI_INC_COMP_ORIG_YR6_RT, HI_INC_COMP_4YR_TRANS_YR6_RT, DEP_COMP_ORIG_YR6_RT, DEP_COMP_4YR_TRANS_YR6_RT,
          IND_COMP_ORIG_YR6_RT, IND_COMP_4YR_TRANS_YR6_RT, FEMALE_COMP_ORIG_YR6_RT, FEMALE_COMP_4YR_TRANS_YR6_RT, MALE_COMP_ORIG_YR6_RT,
          MALE_COMP_4YR_TRANS_YR6_RT, FIRSTGEN_COMP_ORIG_YR6_RT, FIRSTGEN_COMP_4YR_TRANS_YR6_RT, NOT1STGEN_COMP_ORIG_YR6_RT,
@@ -49,6 +49,10 @@ for(i in 1:ncol(clean_data)){
 }
 
 #converting types of variables that don't make any sense (and getting rid of some variables)
+<<<<<<< HEAD
+=======
+#Converting types of variables that don't make any sense (and getting rid of some variables)
+>>>>>>> 7de4da4e33d5dfb7040a1b715aa21cb12315b738
 clean_data$PREDDEG=as.factor(clean_data$PREDDEG) #PREDDEG tells us the predominant type of degree given in a univ
 clean_data$CITY=NULL  #Don't need city variable in my opinion
 clean_data$ZIP=NULL #Don't need zip code variable in my opinion
@@ -58,13 +62,21 @@ clean_data$REGION= as.factor(clean_data$REGION) #Region should not be an integer
 clean_data$LOCALE2=NULL #Too many NULL values here
 clean_data$ADM_RATE=as.numeric(clean_data$ADM_RATE) #Admission rates shouldn't be a factor
 clean_data[,13:85]=apply(clean_data[,13:85], 2, as.numeric) #Converting all sat/act scores and percentage of people in certain degrees into numeric variables
+<<<<<<< HEAD
 clean_data$LOCALE2=NULL # Too many NULL values here
+=======
+clean_data$LOCALE2=NULL # Too many NULL values here 
+>>>>>>> 7de4da4e33d5dfb7040a1b715aa21cb12315b738
 clean_data$ADM_RATE=as.numeric(as.character(clean_data$ADM_RATE)) #admission rates shouldnt be a factor
 clean_data$ADM_RATE_ALL=NULL #no need for two admission rates... 99% correlation between above adm rate
 clean_data[,13:85]=apply(clean_data[,13:85], 2, as.numeric) #converting all sat/act scores and percentage of people in certain degrees into numeric variables
 clean_data[,c(86:105,107,114:133,135,145:156,158)]=NULL #Removing variables with several Null values
 clean_data[,86:ncol(clean_data)]=apply(clean_data[,86:ncol(clean_data)], 2, as.numeric) #Converting all these factors into numeric variables
 clean_data$CURROPER=NULL #Takes on only 1 variable
+clean_data[,7:85]=apply(clean_data[,7:85], 2, as.numeric) #converting all sat/act scores and percentage of people in certain degrees into numeric variables
+clean_data[,c(86:105,107,120:139,141,151:162,164)]=NULL #Removing variables with several Null values
+clean_data[,86:ncol(clean_data)]=apply(clean_data[,86:ncol(clean_data)], 2, as.numeric) #converting all these factors  into numeric variables
+clean_data$CURROPER=NULL #Takes on only 1 variable 
 
 #getting rid of 4 more useless variables
 clean_data$INSTNM=NULL
