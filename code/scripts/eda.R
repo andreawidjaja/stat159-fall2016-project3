@@ -12,23 +12,24 @@ selected_data <- data %>%
   filter(CONTROL == 1) #Public schools
 
 #Quantitative variables
+as.integer(clean_data$ADM_RATE)
 quantitative <- clean_data %>%
-  select(PREDDEG, REGION, ADM_RATE, SATVR25, SATVR75, SATMT25, SATMT75, SATWR25, SATWR75,
-         SATVRMID, SATMTMID, SATWRMID, ACTCM25, ACTCM75, ACTEN25, ACTEN75, ACTMT25, ACTMT75,
-         ACTWR25, ACTWR75, ACTCMMID, ACTENMID, ACTMTMID, ACTWRMID, SAT_AVG, PCIP01, PCIP03,
-         PCIP04, PCIP05, PCIP09, PCIP10, PCIP11, PCIP12, PCIP13, PCIP14, PCIP15, PCIP16,
-         PCIP19, PCIP22, PCIP23, PCIP24, PCIP25, PCIP26, PCIP27, PCIP29, PCIP30, PCIP31,
-         PCIP38, PCIP39, PCIP40, PCIP41, PCIP42, PCIP43, PCIP44, PCIP45, PCIP46, PCIP47,
-         PCIP48, PCIP49, PCIP50, PCIP51, PCIP52, PCIP54, NPT4_PUB, NPT41_PUB, NPT42_PUB,
-         NPT43_PUB, NPT44_PUB, NPT45_PUB, NUM4_PUB, NUM41_PUB, NUM42_PUB, NUM43_PUB,
-         NUM44_PUB, NUM45_PUB, COSTT4_A, TUITIONFEE_IN, TUITIONFEE_OUT, AVGFACSAL, PFTFAC,
-         AGE_ENTRY, FEMALE, MARRIED, DEPENDENT, VETERAN, FIRST_GEN, C150_4, UGDS, UGDS_WHITE,
-         UGDS_BLACK, UGDS_HISP, UGDS_ASIAN, UGDS_AIAN, UGDS_NHPI, UGDS_2MOR, UGDS_NRA, UGDS_UNKN,
-         PPTUG_EF, NPT4_048_PUB, NPT4_3075_PUB, NPT4_75UP_PUB)
+  select("ADM_RATE", "SATVR25", "SATVR75", "SATMT25", "SATMT75", "SATWR25", "SATWR75",
+         "SATVRMID", "SATMTMID", "SATWRMID", "ACTCM25", "ACTCM75", "ACTEN25", "ACTEN75", "ACTMT25", "ACTMT75",
+         "ACTWR25", "ACTWR75", "ACTCMMID", "ACTENMID", "ACTMTMID", "ACTWRMID", "SAT_AVG", "PCIP01", "PCIP03",
+         "PCIP04", "PCIP05", "PCIP09", "PCIP10", "PCIP11", "PCIP12", "PCIP13", "PCIP14", "PCIP15", "PCIP16",
+         "PCIP19", "PCIP22", "PCIP23", "PCIP24", "PCIP25", "PCIP26", "PCIP27", "PCIP29", "PCIP30", "PCIP31",
+         "PCIP38", "PCIP39", "PCIP40", "PCIP41", "PCIP42", "PCIP43", "PCIP44", "PCIP45", "PCIP46", "PCIP47",
+         "PCIP48", "PCIP49", "PCIP50", "PCIP51", "PCIP52", "PCIP54", "NPT4_PUB", "NPT41_PUB", "NPT42_PUB",
+         "NPT43_PUB", "NPT44_PUB", "NPT45_PUB", "NUM4_PUB", "NUM41_PUB", "NUM42_PUB", "NUM43_PUB",
+         "NUM44_PUB", "NUM45_PUB", "COSTT4_A", "TUITIONFEE_IN", "TUITIONFEE_OUT", "AVGFACSAL", "PFTFAC",
+         "AGE_ENTRY", "FEMALE", "MARRIED", "DEPENDENT", "VETERAN", "FIRST_GEN", "C150_4", "UGDS", "UGDS_WHITE",
+         "UGDS_BLACK", "UGDS_HISP", "UGDS_ASIAN", "UGDS_AIAN", "UGDS_NHPI", "UGDS_2MOR", "UGDS_NRA", "UGDS_UNKN",
+         "PPTUG_EF", "NPT4_048_PUB", "NPT4_3075_PUB", "NPT4_75UP_PUB")
 
 #Qualitative variables
-qualitative <- clean_data %>%
-  select()
+qualitative <- selected_data %>%
+  select(REGION)
 
 #Summary statistics of quantitative variables
 #min, 1st quartile, median, mean, 3rd quartile, max
@@ -39,13 +40,14 @@ quantitative_range <- apply(quantitative, 2, FUN=range)
 quantitative_IQR <- apply(quantitative, 2, FUN=IQR)
 #standard deviation
 quantitative_SD <- apply(quantitative, 2, FUN=sd)
+#histograms
 #histogram of average ACT scores
 png("../../images/histogram_ACT_avg.png")
-hist(clean_data$ACTCMMID)
+hist(clean_data$ACTCMMID, main = "Histogram of Average of ACT Scores")
 dev.off()
 #histogram of average SAT scores
 png("../../images/histogram_SAT_avg.png")
-hist(clean_data$SAT_AVG)
+hist(clean_data$SAT_AVG, main = "Histogram of Average of SAT Scores")
 dev.off()
 #histogram of percentage of degrees of different majors
 pairs_majors = clean_data[, c("PCIP01", "PCIP03", "PCIP04", "PCIP05", "PCIP09", "PCIP10",
@@ -111,37 +113,40 @@ hist(UGDS_AIAN, main = "Histogram of Share of Enrollment who are American Indian
 hist(UGDS_NHPI, main = "Histogram of Share of Enrollment who are Hawaiian/Pacific Islander")
 par(graph_race_enrollment)
 dev.off()
-#histogram of net price of institution
-png("../../images/histogram_net_price.png")
-hist(clean_data$NPT4_PUB)
-dev.off()
 #histogram of average cost per academic year
 png("../../images/histogram_net_price.png")
-hist(clean_data$COSTT4_A)
-dev.off()
-#histogram of average faculty salary
-png("../../images/histogram_faculty_salary.png")
-hist(clean_data$AVGFACSAL)
+hist(clean_data$COSTT4_A, main = "Histogram of Average Cost per Academic Year")
 dev.off()
 #histogram of completion rate
 png("../../images/histogram_completion.png")
-hist(clean_data$C150_4)
+hist(clean_data$C150_4, main = "Histogram of Completion Rate")
 dev.off()
 #histogram of completion rate by income level
-pairs_race_enrollment = clean_data[, c("COMP_ORIG_YR6_RT", "LO_INC_COMP_ORIG_YR6_RT", "LO_INC_COMP_4YR_TRANS_YR6_RT", "MD_INC_COMP_ORIG_YR6_RT",
+pairs_income_completion = clean_data[, c("COMP_ORIG_YR6_RT", "LO_INC_COMP_ORIG_YR6_RT", "LO_INC_COMP_4YR_TRANS_YR6_RT", "MD_INC_COMP_ORIG_YR6_RT",
                                       "HI_INC_COMP_ORIG_YR6_RT")]
 png("../../images/histogram_income_graduation.png")
-attach(pairs_income_graduation)
-graph_race_enrollment <- par(mfrow = c(2, 2))
+attach(pairs_income_completion)
+graph_income_completion <- par(mfrow = c(2, 2))
 hist(COMP_ORIG_YR6_RT, main = "Histogram of % who completed in 6 years")
 hist(LO_INC_COMP_ORIG_YR6_RT, main = "Histogram of % who completed in 6 years from low-income families")
 hist(LO_INC_COMP_4YR_TRANS_YR6_RT, main = "Histogram of % who completed in 6 years from medium-income families")
 hist(HI_INC_COMP_ORIG_YR6_RT, main = "Histogram of % who completed in 6 years from high-income families")
-par(graph_income_graduation)
+par(graph_income_completion)
 dev.off()
 #histogram of completion rate by race (black, white, hisp, asian, native american, nhpi)
-FILL THIS IN
-
+pairs_race_completion = clean_data[, c("C150_4_WHITE", "C150_4_BLACK", "C150_4_HISP", "C150_4_AIAN",
+                                       "C150_4_ASIAN", "C150_4_NHPI")]
+png("../../images/histogram_race_completion")
+attach(pairs_race_completion)
+graph_race_completion <- par(mfrow = c(3, 2))
+hist(C150_4_WHITE, main = "Histogram of Completion Rate in 6 years who are White")
+hist(C150_4_BLACK, main = "Histogram of Completion Rate in 6 years who are Black")
+hist(C150_4_HISP, main = "Histogram of Completion Rate in 6 years who are Hispanic")
+hist(C150_4_AIAN, main = "Histogram of Completion Rate in 6 years who are American Indian/Alaska Native")
+hist(C150_4_ASIAN, main = "Histogram of Completion Rate in 6 years who are Asian")
+hist(C150_4_NHPI, main = "Histogram of Completion Rate in 6 years who are Hawaiian/Pacific Islander")
+par(graph_race_completion)
+dev.off()
 
 #Summary statistics of qualitative variables
 png("../../images/histogram_region.png")
@@ -162,15 +167,15 @@ cat("Min, 1st Quartile, Median, Mean, 3rd Quartile, Max of quantitative variable
 print(quantitative_summary)
 cat("\n\n")
 #range
-cat("Range of quantitative variables\n")
+cat("Range of Quantitative Variables\n")
 print(quantitative_range)
 cat("\n\n")
 #IQR
-cat("IQR of quantitative variables\n")
+cat("IQR of Quantitative Variables\n")
 print(quantitative_IQR)
 cat("\n\n")
 #standard deviation
-cat("Standard Deviation of quantitative variables\n")
+cat("Standard Deviation of Quantitative Variables\n")
 print(quantitative_SD)
 cat("\n\n")
 sink()
