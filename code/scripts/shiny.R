@@ -1,17 +1,17 @@
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3/code/scripts")
-library(shiny)
 clean_data=read.csv("../../data/clean_data.csv")[-1]
+library(shiny)
 source("functions.R")
+
 
 ui <- fluidPage(
   actionButton("click", label="Generate Relevant Variables"), #Creating an action button 
   textInput("text", label = h3("Text input"), value = "Lasso, BIC, P-Value"), #Creating an input widget
-  radioButtons("Select Graduation Rate of Interest", label = h3("Radio buttons"),
-               choices = list("Overall Graduation Rate" = "UGDS", "Graduation Rates of White People" = "UGDS_WHITE", "Graduation Rates of Black People" = "UGDS_BLACK",
-                              "Graduation Rates of Hispanic People"="UGDS_HISP", "GRADUATION RATES OF ASIAN PEOPLE"="UGDS_ASIAN", ="UGDS_AIAN",
-                              ="UGDS_NHPI", ="UGDS_2MOR", ="UGDS_NRA", ="UGDS_UNKN"), 
+  radioButtons("radio", label = h3("Select Graduation Rate of Interest"),
+               choices = list("Overall Graduation Rate" = "C150_4", "Graduation Rates of White People" = "C150_4_WHITE", "Graduation Rates of Black People" = "C150_4_BLACK",
+                              "Graduation Rates of Hispanic People"="C150_4_HISP", "Graduation Rates of Asian People"="C150_4_ASIAN", "Graduation Rates of Native Americans"="C150_4_AIAN",
+                              "Graduation Rates of Pacific Islanders"="C150_4_NHPI"), 
                selected = 1),
-  
   numericInput("var_num", label=h3("Number of Variables"), value=1:10),
   tableOutput("variables")
 )
@@ -20,10 +20,13 @@ ui <- fluidPage(
 
 server <- function(input, output){
   observeEvent(input$click,{
-    order_ind=order(table(rel_data2$obfs_bkuuid), decreasing=TRUE) #ordering unique user ids by counts of repeats in decreasing order
-    ids=names(table(rel_data2$obfs_bkuuid)[order_ind]) #reordering ids by above indices
-    index=sample(1:length(ids),1) #getting a random user
-    output$variables=renderTable({repeatuser_mods2(ids[index],input$text)}) #plotting a random user with a specified time scale 
+    df=choosing_response(clean_data, input$radio)
+    if(input$text=="Lasso"){
+      output$variables=renderTable({lasso_select(df,input$radio,input$var_num)})
+    }
+    else if(input$text=="BIC"){
+      output$variables=renderTable({bic_select(df,input$radio,input$var_num)})
+    }
   })
 }
 
