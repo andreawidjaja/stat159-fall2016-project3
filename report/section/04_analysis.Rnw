@@ -1,0 +1,25 @@
+# Analysis
+
+## Exploratory Data Analysis
+When building any model, we want to first understand it. For this dataset, we obtain descriptive statistics and summaries of all variables.
+
+### Quantitative variables
+Summary Statistics of Quantitative Variables
+Min, 1st Quartile, Median, Mean, 3rd Quartile, Max of quantitative variables
+\input{quantitative_summary, file = '../../data/eda.txt'}
+Range of Quantitative Variables
+\input{quantitative_range, file = '../../data/eda.txt'}
+IQR of Quantitative Variables
+\input{quantitative_IQR, file = '../../data/eda.txt'}
+Standard Deviation of Quantitative Variables
+\input{quantitative_SD, file = '../../data/eda.txt'}
+
+Histogram
+\includegraphics{../../images/histogram_ACT_avg.png}
+\includegraphics{../../images/histogram_SAT_avg.png}
+\includegraphics{../../images/histogram_majors.png}
+\includegraphics{../../images/histogram_race_enrollment.png}
+\includegraphics{../../images/histogram_net_price.png}
+\includegraphics{../../images/histogram_completion.png}
+\includegraphics{../../images/histogram_income_graduation.png}
+\includegraphics{../../images/histogram_race_completion}

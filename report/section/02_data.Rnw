@@ -1,0 +1,5 @@
+_College Scorecard_ has record of colleges' admissions rate, graduation rate, and distribution of students based on race, income, and status from 1996 until 2015. For this project, we chose the most recent dataset, _MERGED2014_15_PP.csv_, which consists of `7703` colleges and `1743` variables.
+
+Before starting any analysis, we clean the data by filtering only the data we want, and removing null values. Since we are a public policy researcher working for the government, we only want to take into account public schools. To use more consistent and reliable data, we futher filtered data choosing only main campuses, and colleges that awards predominently bachelor degrees.
+
+Data selection is based on the variables we deem necessary for our analysis. The predictors we selected are ACT and SAT scores, percentage of degrees awarded in each major, share of enrollment for each race, price of each college and number of students from each income group. Our main response is completion rate and for further analysis we included the completion rate by race, income group, and status (men, women, dependent, independent, married, etc.).
