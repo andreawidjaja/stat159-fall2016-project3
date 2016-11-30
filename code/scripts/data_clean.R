@@ -5,7 +5,7 @@
 library(dplyr)
 
 #read data set
-args<-commandArgs(trailingOnly=TRUE)
+args <- commandArgs(trailingOnly=TRUE)
 data <- read.csv(args[1])
 
 #data cleaning
@@ -42,7 +42,6 @@ race_and_income <- selected_data %>%
 merge_1 <- merge(x_variables, y_variables, by = "INSTNM")
 clean_data <- merge(merge_1, race_and_income, by = "INSTNM")
 
-<<<<<<< HEAD
 #checking to see variable types
 v=vector()
 for(i in 1:ncol(clean_data)){
@@ -50,25 +49,19 @@ for(i in 1:ncol(clean_data)){
 }
 
 #converting types of variables that don't make any sense (and getting rid of some variables)
-=======
-#Converting types of variables that don't make any sense (and getting rid of some variables)
->>>>>>> 0a8c2321f75ff5921f5868e5447fa6ce4f4b47e7
 clean_data$PREDDEG=as.factor(clean_data$PREDDEG) #PREDDEG tells us the predominant type of degree given in a univ
 clean_data$CITY=NULL  #Don't need city variable in my opinion
 clean_data$ZIP=NULL #Don't need zip code variable in my opinion
 clean_data$ST_FIPS= as.factor(clean_data$ST_FIPS) #State should not be an integer variable
 clean_data$ST_FIPS=NULL #Don't need state variable when we have a region variable
 clean_data$REGION= as.factor(clean_data$REGION) #Region should not be an integer variable
-<<<<<<< HEAD
 clean_data$LOCALE2=NULL #Too many NULL values here
 clean_data$ADM_RATE=as.numeric(clean_data$ADM_RATE) #Admission rates shouldn't be a factor
 clean_data[,13:85]=apply(clean_data[,13:85], 2, as.numeric) #Converting all sat/act scores and percentage of people in certain degrees into numeric variables
-=======
-clean_data$LOCALE2=NULL # Too many NULL values here 
+clean_data$LOCALE2=NULL # Too many NULL values here
 clean_data$ADM_RATE=as.numeric(as.character(clean_data$ADM_RATE)) #admission rates shouldnt be a factor
 clean_data$ADM_RATE_ALL=NULL #no need for two admission rates... 99% correlation between above adm rate
 clean_data[,13:85]=apply(clean_data[,13:85], 2, as.numeric) #converting all sat/act scores and percentage of people in certain degrees into numeric variables
->>>>>>> 0a8c2321f75ff5921f5868e5447fa6ce4f4b47e7
 clean_data[,c(86:105,107,114:133,135,145:156,158)]=NULL #Removing variables with several Null values
 clean_data[,86:ncol(clean_data)]=apply(clean_data[,86:ncol(clean_data)], 2, as.numeric) #Converting all these factors into numeric variables
 clean_data$CURROPER=NULL #Takes on only 1 variable
@@ -95,7 +88,6 @@ clean_data=as.data.frame(clean_data)[,-1]
 for (i in c(10:ncol(clean_data))){
   clean_data[,i]=scale(clean_data[,i])
 }
-
 
 #clean race and income and y and x variables
 write.csv(clean_data, file = '../../data/clean_data.csv')
