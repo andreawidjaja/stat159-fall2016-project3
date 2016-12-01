@@ -1,4 +1,4 @@
-#setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3/code/scripts")
+setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3/code/scripts")
 clean_data=read.csv("../../data/clean_data.csv")[-1]
 library(shiny)
 source("functions.R")
@@ -6,7 +6,7 @@ source("functions.R")
 
 ui <- fluidPage(
   actionButton("click", label="Generate Relevant Variables"), #Creating an action button 
-  textInput("text", label = h3("Text input"), value = "Lasso, BIC, P-Value"), #Creating an input widget
+  radioButtons("text", label=h3("Variable Selection Method"), choices=list("Lasso"="Lasso", "BIC"="BIC","P-Value"="P-Value")),
   radioButtons("radio", label = h3("Select Graduation Rate of Interest"),
                choices = list("Overall Graduation Rate" = "C150_4", "Graduation Rates of White People" = "C150_4_WHITE", "Graduation Rates of Black People" = "C150_4_BLACK",
                               "Graduation Rates of Hispanic People"="C150_4_HISP", "Graduation Rates of Asian People"="C150_4_ASIAN", "Graduation Rates of Native Americans"="C150_4_AIAN",
