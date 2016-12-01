@@ -2,15 +2,276 @@ Summary Statistics of Quantitative Variables
 
 
 Min, 1st Quartile, Median, Mean, 3rd Quartile, Max of quantitative variables
+    ADM_RATE         SATVR25           SATVR75           SATMT25           SATMT75       
+ Min.   :-3.065   Min.   :-3.5801   Min.   :-2.5166   Min.   :-4.0259   Min.   :-2.3291  
+ 1st Qu.:-0.553   1st Qu.:-0.6563   1st Qu.:-0.5657   1st Qu.:-0.6109   1st Qu.:-0.7147  
+ Median : 0.000   Median : 0.0000   Median : 0.0000   Median : 0.0000   Median : 0.0000  
+ Mean   : 0.000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
+ 3rd Qu.: 0.705   3rd Qu.: 0.3879   3rd Qu.: 0.4683   3rd Qu.: 0.3777   3rd Qu.: 0.4748  
+ Max.   : 1.898   Max.   : 3.7293   Max.   : 3.1410   Max.   : 4.0623   Max.   : 3.5337  
+    SATWR25            SATWR75          SATVRMID          SATMTMID          SATWRMID     
+ Min.   :-3.97168   Min.   :-3.854   Min.   :-2.3858   Min.   :-2.4599   Min.   :-3.952  
+ 1st Qu.:-0.02023   1st Qu.: 0.000   1st Qu.:-0.5538   1st Qu.:-0.5889   1st Qu.: 0.000  
+ Median : 0.00000   Median : 0.000   Median : 0.0000   Median : 0.0000   Median : 0.000  
+ Mean   : 0.00000   Mean   : 0.000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.000  
+ 3rd Qu.: 0.00000   3rd Qu.: 0.000   3rd Qu.: 0.4399   3rd Qu.: 0.3911   3rd Qu.: 0.000  
+ Max.   : 4.16366   Max.   : 4.287   Max.   : 3.5140   Max.   : 3.8657   Max.   : 4.155  
+    ACTCM25           ACTCM75           ACTEN25           ACTEN75           ACTMT25       
+ Min.   :-1.9408   Min.   :-2.5505   Min.   :-2.5119   Min.   :-2.7642   Min.   :-2.0125  
+ 1st Qu.:-0.3860   1st Qu.:-0.3572   1st Qu.:-0.3380   1st Qu.:-0.3740   1st Qu.:-0.8293  
+ Median : 0.0000   Median : 0.0000   Median : 0.0000   Median : 0.0000   Median : 0.0000  
+ Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
+ 3rd Qu.: 0.3914   3rd Qu.: 0.3739   3rd Qu.: 0.3866   3rd Qu.: 0.3089   3rd Qu.: 0.0000  
+ Max.   : 3.8895   Max.   : 3.2984   Max.   : 4.0097   Max.   : 3.3820   Max.   : 3.9032  
+    ACTMT75           ACTWR25          ACTWR75          ACTCMMID          ACTENMID      
+ Min.   :-2.9855   Min.   :-5.770   Min.   :-4.317   Min.   :-2.2074   Min.   :-2.5790  
+ 1st Qu.:-0.3503   1st Qu.: 0.000   1st Qu.: 0.000   1st Qu.:-0.6695   1st Qu.:-0.4454  
+ Median : 0.0000   Median : 0.000   Median : 0.000   Median : 0.0000   Median : 0.0000  
+ Mean   : 0.0000   Mean   : 0.000   Mean   : 0.000   Mean   : 0.0000   Mean   : 0.0000  
+ 3rd Qu.: 0.4026   3rd Qu.: 0.000   3rd Qu.: 0.000   3rd Qu.: 0.4839   3rd Qu.: 0.2658  
+ Max.   : 3.4142   Max.   : 9.844   Max.   :12.752   Max.   : 3.5597   Max.   : 3.4661  
+    ACTMTMID          ACTWRMID         SAT_AVG            PCIP01            PCIP03        
+ Min.   :-2.4828   Min.   :-3.916   Min.   :-2.4277   Min.   :-0.4095   Min.   :-0.40119  
+ 1st Qu.:-0.5094   1st Qu.: 0.000   1st Qu.:-0.5532   1st Qu.:-0.4095   1st Qu.:-0.40119  
+ Median : 0.0000   Median : 0.000   Median : 0.0000   Median :-0.4095   Median :-0.40119  
+ Mean   : 0.0000   Mean   : 0.000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.00000  
+ 3rd Qu.: 0.2800   3rd Qu.: 0.000   3rd Qu.: 0.4277   3rd Qu.:-0.4095   3rd Qu.: 0.09936  
+ Max.   : 3.8323   Max.   :10.370   Max.   : 3.4385   Max.   : 7.9474   Max.   :15.54185  
+     PCIP04            PCIP05            PCIP09             PCIP10       
+ Min.   :-0.3454   Min.   :-0.4011   Min.   :-1.25753   Min.   :-0.1986  
+ 1st Qu.:-0.3454   1st Qu.:-0.4011   1st Qu.:-0.79461   1st Qu.:-0.1986  
+ Median :-0.3454   Median :-0.4011   Median :-0.07919   Median :-0.1986  
+ Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.00000   Mean   : 0.0000  
+ 3rd Qu.:-0.3454   3rd Qu.: 0.0437   3rd Qu.: 0.65649   3rd Qu.:-0.1986  
+ Max.   :10.8071   Max.   :13.2211   Max.   : 5.32622   Max.   :11.1558  
+     PCIP11            PCIP12            PCIP13            PCIP14       
+ Min.   :-0.8597   Min.   :-0.1664   Min.   :-1.0139   Min.   :-0.4511  
+ 1st Qu.:-0.4924   1st Qu.:-0.1664   1st Qu.:-0.8181   1st Qu.:-0.4511  
+ Median :-0.1835   Median :-0.1664   Median :-0.1191   Median :-0.4511  
+ Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
+ 3rd Qu.: 0.2185   3rd Qu.:-0.1664   3rd Qu.: 0.5212   3rd Qu.: 0.1184  
+ Max.   :10.7265   Max.   :12.0442   Max.   : 8.5597   Max.   : 8.6229  
+     PCIP15             PCIP16            PCIP19            PCIP22           PCIP23       
+ Min.   :-0.49828   Min.   :-0.9174   Min.   :-0.5575   Min.   :-0.258   Min.   :-1.2684  
+ 1st Qu.:-0.49828   1st Qu.:-0.9174   1st Qu.:-0.5575   1st Qu.:-0.258   1st Qu.:-0.6374  
+ Median :-0.49828   Median :-0.2120   Median :-0.5575   Median :-0.258   Median :-0.1549  
+ Mean   : 0.00000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.000   Mean   : 0.0000  
+ 3rd Qu.: 0.09951   3rd Qu.: 0.3882   3rd Qu.: 0.2430   3rd Qu.:-0.258   3rd Qu.: 0.4093  
+ Max.   : 8.15262   Max.   : 6.4951   Max.   : 4.6485   Max.   :10.639   Max.   : 5.8778  
+     PCIP24            PCIP25             PCIP26            PCIP27       
+ Min.   :-0.5635   Min.   :-0.06673   Min.   :-1.3173   Min.   :-1.1887  
+ 1st Qu.:-0.5635   1st Qu.:-0.06673   1st Qu.:-0.6495   1st Qu.:-0.6218  
+ Median :-0.3534   Median :-0.06673   Median :-0.1620   Median :-0.1883  
+ Mean   : 0.0000   Mean   : 0.00000   Mean   : 0.0000   Mean   : 0.0000  
+ 3rd Qu.: 0.1949   3rd Qu.:-0.06673   3rd Qu.: 0.3598   3rd Qu.: 0.4452  
+ Max.   :10.8583   Max.   :22.63621   Max.   : 7.9251   Max.   : 4.9355  
+     PCIP29             PCIP30             PCIP31            PCIP38       
+ Min.   :-0.05763   Min.   :-0.53779   Min.   :-0.8719   Min.   :-0.7525  
+ 1st Qu.:-0.05763   1st Qu.:-0.53779   1st Qu.:-0.8719   1st Qu.:-0.7525  
+ Median :-0.05763   Median :-0.41171   Median :-0.2299   Median :-0.2841  
+ Mean   : 0.00000   Mean   : 0.00000   Mean   : 0.0000   Mean   : 0.0000  
+ 3rd Qu.:-0.05763   3rd Qu.: 0.06975   3rd Qu.: 0.5437   3rd Qu.: 0.4183  
+ Max.   :21.44485   Max.   : 7.21560   Max.   : 4.8030   Max.   : 6.6668  
+     PCIP39             PCIP40            PCIP41            PCIP42       
+ Min.   :-0.08513   Min.   :-1.0010   Min.   :-0.1221   Min.   :-1.5212  
+ 1st Qu.:-0.08513   1st Qu.:-0.5665   1st Qu.:-0.1221   1st Qu.:-0.6035  
+ Median :-0.08513   Median :-0.1630   Median :-0.1221   Median :-0.1021  
+ Mean   : 0.00000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
+ 3rd Qu.:-0.08513   3rd Qu.: 0.2963   3rd Qu.:-0.1221   3rd Qu.: 0.4818  
+ Max.   :11.72612   Max.   : 9.6195   Max.   :15.1329   Max.   : 5.1631  
+     PCIP43            PCIP44            PCIP45            PCIP46            PCIP47       
+ Min.   :-0.7465   Min.   :-0.7341   Min.   :-1.2178   Min.   :-0.1339   Min.   :-0.1512  
+ 1st Qu.:-0.7465   1st Qu.:-0.7341   1st Qu.:-0.7003   1st Qu.:-0.1339   1st Qu.:-0.1512  
+ Median :-0.2313   Median :-0.2937   Median :-0.2021   Median :-0.1339   Median :-0.1512  
+ Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
+ 3rd Qu.: 0.4399   3rd Qu.: 0.3919   3rd Qu.: 0.4996   3rd Qu.:-0.1339   3rd Qu.:-0.1512  
+ Max.   :10.4193   Max.   : 7.8015   Max.   : 5.0356   Max.   :13.3340   Max.   :17.9753  
+     PCIP48            PCIP49            PCIP50             PCIP51       
+ Min.   :-0.1107   Min.   :-0.1312   Min.   :-0.53757   Min.   :-0.7388  
+ 1st Qu.:-0.1107   1st Qu.:-0.1312   1st Qu.:-0.31331   1st Qu.:-0.5441  
+ Median :-0.1107   Median :-0.1312   Median :-0.13996   Median :-0.2460  
+ Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.00000   Mean   : 0.0000  
+ 3rd Qu.:-0.1107   3rd Qu.:-0.1312   3rd Qu.: 0.08248   3rd Qu.: 0.1841  
+ Max.   :19.1721   Max.   :13.9975   Max.   :11.58457   Max.   : 4.8867  
+     PCIP52             PCIP54           NPT4_PUB          NPT41_PUB      
+ Min.   :-1.87181   Min.   :-1.2520   Min.   :-3.05157   Min.   :-2.7998  
+ 1st Qu.:-0.49178   1st Qu.:-0.5897   1st Qu.:-0.62059   1st Qu.:-0.5818  
+ Median :-0.03485   Median :-0.1145   Median : 0.01257   Median : 0.0000  
+ Mean   : 0.00000   Mean   : 0.0000   Mean   : 0.00000   Mean   : 0.0000  
+ 3rd Qu.: 0.38809   3rd Qu.: 0.3794   3rd Qu.: 0.64050   3rd Qu.: 0.6121  
+ Max.   : 7.09863   Max.   : 7.8026   Max.   : 3.71214   Max.   : 3.4299  
+   NPT42_PUB         NPT43_PUB         NPT44_PUB         NPT45_PUB          NUM4_PUB      
+ Min.   :-2.8484   Min.   :-3.2571   Min.   :-4.3620   Min.   :-4.1981   Min.   :-1.2967  
+ 1st Qu.:-0.5919   1st Qu.:-0.6635   1st Qu.:-0.6566   1st Qu.:-0.6581   1st Qu.:-0.7626  
+ Median : 0.0000   Median : 0.0000   Median : 0.0000   Median : 0.0000   Median :-0.2127  
+ Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
+ 3rd Qu.: 0.6233   3rd Qu.: 0.5968   3rd Qu.: 0.5860   3rd Qu.: 0.5492   3rd Qu.: 0.4108  
+ Max.   : 4.2402   Max.   : 3.5373   Max.   : 3.4148   Max.   : 3.4008   Max.   : 4.1547  
+   NUM41_PUB         NUM42_PUB         NUM43_PUB         NUM44_PUB         NUM45_PUB      
+ Min.   :-1.1428   Min.   :-1.2282   Min.   :-1.2470   Min.   :-1.1379   Min.   :-0.8924  
+ 1st Qu.:-0.7185   1st Qu.:-0.7627   1st Qu.:-0.8029   1st Qu.:-0.8312   1st Qu.:-0.7393  
+ Median :-0.2220   Median :-0.2058   Median :-0.2329   Median :-0.2034   Median :-0.3395  
+ Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
+ 3rd Qu.: 0.3964   3rd Qu.: 0.4313   3rd Qu.: 0.4776   3rd Qu.: 0.4829   3rd Qu.: 0.3613  
+ Max.   : 6.4400   Max.   : 5.1199   Max.   : 3.5271   Max.   : 3.3448   Max.   : 5.6822  
+    COSTT4_A         TUITIONFEE_IN     TUITIONFEE_OUT       AVGFACSAL      
+ Min.   :-3.280805   Min.   :-2.7316   Min.   :-2.69184   Min.   :-2.6682  
+ 1st Qu.:-0.647049   1st Qu.:-0.6423   1st Qu.:-0.55228   1st Qu.:-0.6594  
+ Median :-0.003806   Median :-0.1787   Median :-0.08736   Median :-0.1621  
+ Mean   : 0.000000   Mean   : 0.0000   Mean   : 0.00000   Mean   : 0.0000  
+ 3rd Qu.: 0.536384   3rd Qu.: 0.4819   3rd Qu.: 0.40768   3rd Qu.: 0.5651  
+ Max.   : 3.345376   Max.   : 3.7027   Max.   : 3.64958   Max.   : 9.1921  
+     PFTFAC            AGE_ENTRY           FEMALE            MARRIED       
+ Min.   :-3.705386   Min.   :-1.3914   Min.   :-4.92548   Min.   :-1.1029  
+ 1st Qu.:-0.653220   1st Qu.:-0.6729   1st Qu.:-0.37447   1st Qu.:-0.7036  
+ Median : 0.001221   Median :-0.1938   Median : 0.03149   Median :-0.2282  
+ Mean   : 0.000000   Mean   : 0.0000   Mean   : 0.00000   Mean   : 0.0000  
+ 3rd Qu.: 0.739857   3rd Qu.: 0.3495   3rd Qu.: 0.48689   3rd Qu.: 0.3221  
+ Max.   : 1.459897   Max.   : 5.6165   Max.   : 3.33332   Max.   : 5.2439  
+   DEPENDENT          VETERAN          FIRST_GEN           C150_4             UGDS        
+ Min.   :-4.1245   Min.   :-1.3934   Min.   :-2.6805   Min.   :-2.6783   Min.   :-1.1450  
+ 1st Qu.:-0.4137   1st Qu.:-0.4237   1st Qu.:-0.6330   1st Qu.:-0.6837   1st Qu.:-0.7531  
+ Median : 0.1780   Median : 0.0000   Median : 0.1074   Median :-0.0460   Median :-0.3341  
+ Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
+ 3rd Qu.: 0.7151   3rd Qu.: 0.0000   3rd Qu.: 0.6815   3rd Qu.: 0.6286   3rd Qu.: 0.5181  
+ Max.   : 1.3879   Max.   :10.4707   Max.   : 3.0260   Max.   : 2.7023   Max.   : 4.6526  
+   UGDS_WHITE        UGDS_BLACK         UGDS_HISP          UGDS_ASIAN     
+ Min.   :-2.1773   Min.   :-0.70649   Min.   :-0.69079   Min.   :-0.6691  
+ 1st Qu.:-0.5662   1st Qu.:-0.54251   1st Qu.:-0.52277   1st Qu.:-0.5350  
+ Median : 0.3126   Median :-0.36612   Median :-0.37589   Median :-0.3697  
+ Mean   : 0.0000   Mean   : 0.00000   Mean   : 0.00000   Mean   : 0.0000  
+ 3rd Qu.: 0.7948   3rd Qu.: 0.03083   3rd Qu.: 0.01508   3rd Qu.: 0.0822  
+ Max.   : 1.4744   Max.   : 3.68294   Max.   : 4.59267   Max.   : 5.5582  
+   UGDS_AIAN         UGDS_NHPI          UGDS_2MOR          UGDS_NRA      
+ Min.   :-0.2322   Min.   :-0.13869   Min.   :-1.1049   Min.   :-0.9671  
+ 1st Qu.:-0.1927   1st Qu.:-0.11114   1st Qu.:-0.4506   1st Qu.:-0.6499  
+ Median :-0.1648   Median :-0.08819   Median :-0.1324   Median :-0.3360  
+ Mean   : 0.0000   Mean   : 0.00000   Mean   : 0.0000   Mean   : 0.0000  
+ 3rd Qu.:-0.1022   3rd Qu.:-0.04227   3rd Qu.: 0.1803   3rd Qu.: 0.3647  
+ Max.   :20.2139   Max.   :22.57021   Max.   :10.0047   Max.   : 8.5449  
+   UGDS_UNKN          PPTUG_EF        NPT4_048_PUB     NPT4_3075_PUB     NPT4_75UP_PUB    
+ Min.   :-0.8870   Min.   :-1.2808   Min.   :-2.8527   Min.   :-3.0356   Min.   :-4.1306  
+ 1st Qu.:-0.6475   1st Qu.:-0.7206   1st Qu.:-0.5752   1st Qu.:-0.6577   1st Qu.:-0.6594  
+ Median :-0.3026   Median :-0.2068   Median : 0.0000   Median : 0.0000   Median : 0.0000  
+ Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
+ 3rd Qu.: 0.3331   3rd Qu.: 0.4734   3rd Qu.: 0.6203   3rd Qu.: 0.6327   3rd Qu.: 0.6220  
+ Max.   : 8.3315   Max.   : 6.1622   Max.   : 3.5313   Max.   : 3.6681   Max.   : 3.3961  
 
 
 Range of Quantitative Variables
+      ADM_RATE   SATVR25   SATVR75   SATMT25   SATMT75   SATWR25   SATWR75  SATVRMID
+[1,] -3.065326 -3.580088 -2.516643 -4.025855 -2.329084 -3.971679 -3.854434 -2.385811
+[2,]  1.897961  3.729303  3.141032  4.062315  3.533688  4.163660  4.286960  3.513964
+      SATMTMID  SATWRMID   ACTCM25   ACTCM75   ACTEN25   ACTEN75   ACTMT25   ACTMT75
+[1,] -2.459885 -3.951603 -1.940769 -2.550517 -2.511921 -2.764248 -2.012453 -2.985524
+[2,]  3.865684  4.154825  3.889544  3.298356  4.009735  3.382046  3.903246  3.414240
+       ACTWR25   ACTWR75  ACTCMMID  ACTENMID  ACTMTMID  ACTWRMID   SAT_AVG     PCIP01
+[1,] -5.770195 -4.316624 -2.207431 -2.578982 -2.482834 -3.915913 -2.427683 -0.4095077
+[2,]  9.844358 12.752378  3.559691  3.466138  3.832311 10.370283  3.438464  7.9474336
+         PCIP03     PCIP04     PCIP05    PCIP09     PCIP10     PCIP11     PCIP12    PCIP13
+[1,] -0.4011938 -0.3454194 -0.4011011 -1.257533 -0.1986287 -0.8596906 -0.1663737 -1.013883
+[2,] 15.5418483 10.8071413 13.2210602  5.326221 11.1558258 10.7265040 12.0442409  8.559662
+         PCIP14     PCIP15     PCIP16     PCIP19     PCIP22    PCIP23     PCIP24
+[1,] -0.4510996 -0.4982767 -0.9174437 -0.5575471 -0.2580399 -1.268363 -0.5635456
+[2,]  8.6228584  8.1526204  6.4951080  4.6485145 10.6388491  5.877797 10.8583413
+          PCIP25    PCIP26    PCIP27      PCIP29     PCIP30     PCIP31     PCIP38
+[1,] -0.06673434 -1.317317 -1.188659 -0.05763052 -0.5377865 -0.8718533 -0.7524705
+[2,] 22.63620469  7.925104  4.935473 21.44484783  7.2155959  4.8030497  6.6667563
+          PCIP39    PCIP40     PCIP41    PCIP42     PCIP43     PCIP44    PCIP45     PCIP46
+[1,] -0.08512607 -1.000993 -0.1221376 -1.521232 -0.7464932 -0.7340942 -1.217827 -0.1338958
+[2,] 11.72611623  9.619539 15.1328713  5.163087 10.4193016  7.8015336  5.035567 13.3339935
+         PCIP47     PCIP48     PCIP49     PCIP50     PCIP51    PCIP52    PCIP54  NPT4_PUB
+[1,] -0.1512087 -0.1106705 -0.1311803 -0.5375702 -0.7387728 -1.871806 -1.251960 -3.051573
+[2,] 17.9753343 19.1720679 13.9974918 11.5845751  4.8866711  7.098629  7.802616  3.712142
+     NPT41_PUB NPT42_PUB NPT43_PUB NPT44_PUB NPT45_PUB  NUM4_PUB NUM41_PUB NUM42_PUB
+[1,] -2.799823 -2.848426 -3.257074 -4.362032 -4.198099 -1.296668 -1.142804 -1.228157
+[2,]  3.429899  4.240249  3.537254  3.414828  3.400848  4.154665  6.439978  5.119854
+     NUM43_PUB NUM44_PUB  NUM45_PUB  COSTT4_A TUITIONFEE_IN TUITIONFEE_OUT AVGFACSAL
+[1,] -1.246963 -1.137850 -0.8923554 -3.280805     -2.731643      -2.691845 -2.668155
+[2,]  3.527053  3.344832  5.6821843  3.345376      3.702737       3.649579  9.192119
+        PFTFAC AGE_ENTRY    FEMALE   MARRIED DEPENDENT   VETERAN FIRST_GEN    C150_4
+[1,] -3.705386 -1.391402 -4.925479 -1.102851 -4.124467 -1.393437 -2.680512 -2.678256
+[2,]  1.459897  5.616521  3.333321  5.243865  1.387864 10.470699  3.025986  2.702257
+          UGDS UGDS_WHITE UGDS_BLACK  UGDS_HISP UGDS_ASIAN  UGDS_AIAN  UGDS_NHPI UGDS_2MOR
+[1,] -1.144957  -2.177263 -0.7064913 -0.6907874 -0.6690674 -0.2321591 -0.1386924 -1.104929
+[2,]  4.652583   1.474426  3.6829442  4.5926745  5.5581616 20.2139446 22.5702132 10.004709
+       UGDS_NRA  UGDS_UNKN  PPTUG_EF NPT4_048_PUB NPT4_3075_PUB NPT4_75UP_PUB
+[1,] -0.9670851 -0.8870205 -1.280813    -2.852658     -3.035599     -4.130645
+[2,]  8.5449452  8.3315051  6.162198     3.531294      3.668130      3.396129
 
 
 IQR of Quantitative Variables
+      ADM_RATE        SATVR25        SATVR75        SATMT25        SATMT75        SATWR25 
+    1.25796119     1.04419867     1.03398883     0.98855415     1.18954783     0.02022894 
+       SATWR75       SATVRMID       SATMTMID       SATWRMID        ACTCM25        ACTCM75 
+    0.00000000     0.99364628     0.98001774     0.00000000     0.77737513     0.73110914 
+       ACTEN25        ACTEN75        ACTMT25        ACTMT75        ACTWR25        ACTWR75 
+    0.72462847     0.68292153     0.82931309     0.75291343     0.00000000     0.00000000 
+      ACTCMMID       ACTENMID       ACTMTMID       ACTWRMID        SAT_AVG         PCIP01 
+    1.15342424     0.71119057     0.78939310     0.00000000     0.98092854     0.00000000 
+        PCIP03         PCIP04         PCIP05         PCIP09         PCIP10         PCIP11 
+    0.50055669     0.00000000     0.44480527     1.45110672     0.00000000     0.71088796 
+        PCIP12         PCIP13         PCIP14         PCIP15         PCIP16         PCIP19 
+    0.00000000     1.33926724     0.56945835     0.59778671     1.30561990     0.80058852 
+        PCIP22         PCIP23         PCIP24         PCIP25         PCIP26         PCIP27 
+    0.00000000     1.04668483     0.75841329     0.00000000     1.00930281     1.06699932 
+        PCIP29         PCIP30         PCIP31         PCIP38         PCIP39         PCIP40 
+    0.00000000     0.60753305     1.41551596     1.17080822     0.00000000     0.86280189 
+        PCIP41         PCIP42         PCIP43         PCIP44         PCIP45         PCIP46 
+    0.00000000     1.08530872     1.18641602     1.12602975     1.19989165     0.00000000 
+        PCIP47         PCIP48         PCIP49         PCIP50         PCIP51         PCIP52 
+    0.00000000     0.00000000     0.00000000     0.39578804     0.72821371     0.87987241 
+        PCIP54       NPT4_PUB      NPT41_PUB      NPT42_PUB      NPT43_PUB      NPT44_PUB 
+    0.96906407     1.26109099     1.19386785     1.21528289     1.26033416     1.24263350 
+     NPT45_PUB       NUM4_PUB      NUM41_PUB      NUM42_PUB      NUM43_PUB      NUM44_PUB 
+    1.20724434     1.17340468     1.11491290     1.19406693     1.28047248     1.31414147 
+     NUM45_PUB       COSTT4_A  TUITIONFEE_IN TUITIONFEE_OUT      AVGFACSAL         PFTFAC 
+    1.10069245     1.18343323     1.12413436     0.95996077     1.22456504     1.39307695 
+     AGE_ENTRY         FEMALE        MARRIED      DEPENDENT        VETERAN      FIRST_GEN 
+    1.02241603     0.86135507     1.02570963     1.12878289     0.42365339     1.31447052 
+        C150_4           UGDS     UGDS_WHITE     UGDS_BLACK      UGDS_HISP     UGDS_ASIAN 
+    1.31226219     1.27118888     1.36101046     0.57334500     0.53785642     0.61718947 
+     UGDS_AIAN      UGDS_NHPI      UGDS_2MOR       UGDS_NRA      UGDS_UNKN       PPTUG_EF 
+    0.09052084     0.06887052     0.63085966     1.01463814     0.98059807     1.19400179 
+  NPT4_048_PUB  NPT4_3075_PUB  NPT4_75UP_PUB 
+    1.19542728     1.29041230     1.28139419 
 
 
 Standard Deviation of Quantitative Variables
+      ADM_RATE        SATVR25        SATVR75        SATMT25        SATMT75        SATWR25 
+             1              1              1              1              1              1 
+       SATWR75       SATVRMID       SATMTMID       SATWRMID        ACTCM25        ACTCM75 
+             1              1              1              1              1              1 
+       ACTEN25        ACTEN75        ACTMT25        ACTMT75        ACTWR25        ACTWR75 
+             1              1              1              1              1              1 
+      ACTCMMID       ACTENMID       ACTMTMID       ACTWRMID        SAT_AVG         PCIP01 
+             1              1              1              1              1              1 
+        PCIP03         PCIP04         PCIP05         PCIP09         PCIP10         PCIP11 
+             1              1              1              1              1              1 
+        PCIP12         PCIP13         PCIP14         PCIP15         PCIP16         PCIP19 
+             1              1              1              1              1              1 
+        PCIP22         PCIP23         PCIP24         PCIP25         PCIP26         PCIP27 
+             1              1              1              1              1              1 
+        PCIP29         PCIP30         PCIP31         PCIP38         PCIP39         PCIP40 
+             1              1              1              1              1              1 
+        PCIP41         PCIP42         PCIP43         PCIP44         PCIP45         PCIP46 
+             1              1              1              1              1              1 
+        PCIP47         PCIP48         PCIP49         PCIP50         PCIP51         PCIP52 
+             1              1              1              1              1              1 
+        PCIP54       NPT4_PUB      NPT41_PUB      NPT42_PUB      NPT43_PUB      NPT44_PUB 
+             1              1              1              1              1              1 
+     NPT45_PUB       NUM4_PUB      NUM41_PUB      NUM42_PUB      NUM43_PUB      NUM44_PUB 
+             1              1              1              1              1              1 
+     NUM45_PUB       COSTT4_A  TUITIONFEE_IN TUITIONFEE_OUT      AVGFACSAL         PFTFAC 
+             1              1              1              1              1              1 
+     AGE_ENTRY         FEMALE        MARRIED      DEPENDENT        VETERAN      FIRST_GEN 
+             1              1              1              1              1              1 
+        C150_4           UGDS     UGDS_WHITE     UGDS_BLACK      UGDS_HISP     UGDS_ASIAN 
+             1              1              1              1              1              1 
+     UGDS_AIAN      UGDS_NHPI      UGDS_2MOR       UGDS_NRA      UGDS_UNKN       PPTUG_EF 
+             1              1              1              1              1              1 
+  NPT4_048_PUB  NPT4_3075_PUB  NPT4_75UP_PUB 
+             1              1              1 
 
 
 Summary Statistics of Qualitative Variables
@@ -46,12 +307,6 @@ Additional data
 
 
 Matrix of Correlation
-                    X         TV       Radio   Newspaper       Sales
-X          1.00000000 0.01771469 -0.11068044 -0.15494414 -0.05161625
-TV         0.01771469 1.00000000  0.05480866  0.05664787  0.78222442
-Radio     -0.11068044 0.05480866  1.00000000  0.35410375  0.57622257
-Newspaper -0.15494414 0.05664787  0.35410375  1.00000000  0.22829903
-Sales     -0.05161625 0.78222442  0.57622257  0.22829903  1.00000000
 
 
 Anova's between Completion Rate and qualitative variables
