@@ -1,3 +1,19 @@
+\documentclass{article}
+\usepackage{url}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+<<setup, include=FALSE, cache=FALSE, echo=FALSE>>=
+library(knitr)
+# set global chunk options
+
+@
+
+\title{Final Project}
+\author{Joseph Francia, Priscilla Hartono, Nicholas Saber, Andrea Widjaja}
+
+\maketitle
+\section{Abstract}
 This report is the third and final project of STAT 159, Reproducible and Collaborative Statistical Data Science, taught by Professor Gaston Sanchez in the fall of 2016 at UC Berkeley. STAT 159 focuses on the collaborative work and the ability to reproduce valuable data.
 
 This paper consists of six parts: abstract, introduction, data, methods, analysis, results, conclusion. We used data from [**College Scorecard**](https://collegescorecard.ed.gov/). College Scorecard is developed by the U.S. Department of Education (under Obama’s Administration) to provide “key indicators about the cost and value of institutions across the country to help students choose a school that is well-suited to meet their needs, priced affordably, and is consistent with their educational and career goals”. The dataset we chose is [**MERGED2014_15_PP.csv**](https://collegescorecard.ed.gov/data/) because it is the most recent, hence relevant to make future decisions and to understand each variable, we referred to the [**data dictionary**](https://collegescorecard.ed.gov/assets/CollegeScorecardDataDictionary-09-26-2016.xlsx)
