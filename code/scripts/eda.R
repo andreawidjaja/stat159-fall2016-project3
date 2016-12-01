@@ -12,20 +12,36 @@ selected_data <- data %>%
   filter(CONTROL == 1) #Public schools
 
 #Quantitative variables
-as.integer(clean_data$ADM_RATE)
+#as.integer(clean_data$ADM_RATE)
 quantitative <- clean_data %>%
-  dplyr::select("ADM_RATE", "SATVR25", "SATVR75", "SATMT25", "SATMT75", "SATWR25", "SATWR75",
-         "SATVRMID", "SATMTMID", "SATWRMID", "ACTCM25", "ACTCM75", "ACTEN25", "ACTEN75", "ACTMT25", "ACTMT75",
-         "ACTWR25", "ACTWR75", "ACTCMMID", "ACTENMID", "ACTMTMID", "ACTWRMID", "SAT_AVG", "PCIP01", "PCIP03",
-         "PCIP04", "PCIP05", "PCIP09", "PCIP10", "PCIP11", "PCIP12", "PCIP13", "PCIP14", "PCIP15", "PCIP16",
-         "PCIP19", "PCIP22", "PCIP23", "PCIP24", "PCIP25", "PCIP26", "PCIP27", "PCIP29", "PCIP30", "PCIP31",
-         "PCIP38", "PCIP39", "PCIP40", "PCIP41", "PCIP42", "PCIP43", "PCIP44", "PCIP45", "PCIP46", "PCIP47",
-         "PCIP48", "PCIP49", "PCIP50", "PCIP51", "PCIP52", "PCIP54", "NPT4_PUB", "NPT41_PUB", "NPT42_PUB",
-         "NPT43_PUB", "NPT44_PUB", "NPT45_PUB", "NUM4_PUB", "NUM41_PUB", "NUM42_PUB", "NUM43_PUB",
-         "NUM44_PUB", "NUM45_PUB", "COSTT4_A", "TUITIONFEE_IN", "TUITIONFEE_OUT", "AVGFACSAL", "PFTFAC",
-         "AGE_ENTRY", "FEMALE", "MARRIED", "DEPENDENT", "VETERAN", "FIRST_GEN", "C150_4", "UGDS", "UGDS_WHITE",
-         "UGDS_BLACK", "UGDS_HISP", "UGDS_ASIAN", "UGDS_AIAN", "UGDS_NHPI", "UGDS_2MOR", "UGDS_NRA", "UGDS_UNKN",
-         "PPTUG_EF", "NPT4_048_PUB", "NPT4_3075_PUB", "NPT4_75UP_PUB")
+  select(ADM_RATE, SATVR25, SATVR75, SATMT25, SATMT75, SATWR25, SATWR75,
+                SATVRMID, SATMTMID, SATWRMID, ACTCM25, ACTCM75, ACTEN25, ACTEN75, ACTMT25, ACTMT75,
+                ACTWR25, ACTWR75, ACTCMMID, ACTENMID, ACTMTMID, ACTWRMID, SAT_AVG, PCIP01, PCIP03,
+                PCIP04, PCIP05, PCIP09, PCIP10, PCIP11, PCIP12, PCIP13, PCIP14, PCIP15, PCIP16,
+                PCIP19, PCIP22, PCIP23, PCIP24, PCIP25, PCIP26, PCIP27, PCIP29, PCIP30, PCIP31,
+                PCIP38, PCIP39, PCIP40, PCIP41, PCIP42, PCIP43, PCIP44, PCIP45, PCIP46, PCIP47,
+                PCIP48, PCIP49, PCIP50, PCIP51, PCIP52, PCIP54, NPT4_PUB, NPT41_PUB, NPT42_PUB,
+                NPT43_PUB, NPT44_PUB, NPT45_PUB, NUM4_PUB, NUM41_PUB, NUM42_PUB, NUM43_PUB,
+                NUM44_PUB, NUM45_PUB, COSTT4_A, TUITIONFEE_IN, TUITIONFEE_OUT, AVGFACSAL, PFTFAC,
+                AGE_ENTRY, FEMALE, MARRIED, DEPENDENT, VETERAN, FIRST_GEN, C150_4, UGDS, UGDS_WHITE,
+                UGDS_BLACK, UGDS_HISP, UGDS_ASIAN, UGDS_AIAN, UGDS_NHPI, UGDS_2MOR, UGDS_NRA, UGDS_UNKN,
+                PPTUG_EF, NPT4_048_PUB, NPT4_3075_PUB, NPT4_75UP_PUB, COMP_ORIG_YR6_RT,
+                LO_INC_COMP_ORIG_YR6_RT, MD_INC_COMP_ORIG_YR6_RT, HI_INC_COMP_ORIG_YR6_RT)
+
+
+#quantitative <- clean_data %>%
+  #dplyr::select("ADM_RATE", "SATVR25", "SATVR75", "SATMT25", "SATMT75", "SATWR25", "SATWR75",
+         #"SATVRMID", "SATMTMID", "SATWRMID", "ACTCM25", "ACTCM75", "ACTEN25", "ACTEN75", "ACTMT25", "ACTMT75",
+         #"ACTWR25", "ACTWR75", "ACTCMMID", "ACTENMID", "ACTMTMID", "ACTWRMID", "SAT_AVG", "PCIP01", "PCIP03",
+         #"PCIP04", "PCIP05", "PCIP09", "PCIP10", "PCIP11", "PCIP12", "PCIP13", "PCIP14", "PCIP15", "PCIP16",
+         #"PCIP19", "PCIP22", "PCIP23", "PCIP24", "PCIP25", "PCIP26", "PCIP27", "PCIP29", "PCIP30", "PCIP31",
+         #"PCIP38", "PCIP39", "PCIP40", "PCIP41", "PCIP42", "PCIP43", "PCIP44", "PCIP45", "PCIP46", "PCIP47",
+         #"PCIP48", "PCIP49", "PCIP50", "PCIP51", "PCIP52", "PCIP54", "NPT4_PUB", "NPT41_PUB", "NPT42_PUB",
+         #"NPT43_PUB", "NPT44_PUB", "NPT45_PUB", "NUM4_PUB", "NUM41_PUB", "NUM42_PUB", "NUM43_PUB",
+         #"NUM44_PUB", "NUM45_PUB", "COSTT4_A", "TUITIONFEE_IN", "TUITIONFEE_OUT", "AVGFACSAL", "PFTFAC",
+         #"AGE_ENTRY", "FEMALE", "MARRIED", "DEPENDENT", "VETERAN", "FIRST_GEN", "C150_4", "UGDS", "UGDS_WHITE",
+         #"UGDS_BLACK", "UGDS_HISP", "UGDS_ASIAN", "UGDS_AIAN", "UGDS_NHPI", "UGDS_2MOR", "UGDS_NRA", "UGDS_UNKN",
+         #"PPTUG_EF", "NPT4_048_PUB", "NPT4_3075_PUB", "NPT4_75UP_PUB")
 
 #ADM_RATE: Admission rate
 #SATVR25: 25th percentile of SAT scores at the institution (critical reading)
@@ -51,7 +67,7 @@ quantitative <- clean_data %>%
 #ACTWRMID: Midpoint of the ACT writing score
 #SAT_AVG: Average SAT equivalent score of students admitted
 #PCIP01: Percentage of degrees awarded in Agriculture, Agriculture Operations, And Related Sciences.
-#PCIP03: Percentage of degrees awarded in Natural Resources And Conservation.  
+#PCIP03: Percentage of degrees awarded in Natural Resources And Conservation.
 #PCIP04: Percentage of degrees awarded in Architecture And Related Services.
 #PCIP05: Percentage of degrees awarded in Area, Ethnic, Cultural, Gender, And Group Studies.
 #PCIP09: Percentage of degrees awarded in Communication, Journalism, And Related Programs.
@@ -126,7 +142,10 @@ quantitative <- clean_data %>%
 #NPT4_048_PUB: Average net price for $0-$48,000 family income (public institutions)
 #NPT4_3075_PUB: Average net price for $30,001-$75,000 family income (public institutions)
 #NPT4_75UP_PUB: Average net price for $75,000+ family income (public institutions)
-
+#COMP_ORIG_YR6_RT: Percent completed within 6 years at original institution
+#LO_INC_COMP_ORIG_YR6_RT: Percent of low-income (less than $30,000 in nominal family income) students who completed within 6 years at original institution
+#MD_INC_COMP_ORIG_YR6_RT: Percent of middle-income (between $30,000 and $75,000 in nominal family income) students who completed within 6 years at original institution
+#HI_INC_COMP_ORIG_YR6_RT: Percent of high-income (above $75,000 in nominal family income) students who completed within 6 years at original institution
 
 
 
@@ -163,7 +182,7 @@ quantitative_SD <- apply(quantitative, 2, FUN=sd)
 
 #histogram of average ACT scores
 png("../../images/histogram_ACT_avg.png")
-hist(clean_data$ACTCMMID, main = "Histogram of Average of ACT Scores")
+hist(clean_data$ACTCMMID, main = 'Histogram of Average of ACT Scores')
 dev.off()
 
 #histogram of average SAT scores
@@ -172,16 +191,10 @@ hist(clean_data$SAT_AVG, main = "Histogram of Average of SAT Scores")
 dev.off()
 
 #histogram of percentage of degrees of different majors
-pairs_majors = clean_data[, c("PCIP01", "PCIP03", "PCIP04", "PCIP05", "PCIP09", "PCIP10",
-                              "PCIP11", "PCIP12", "PCIP13", "PCIP14", "PCIP15", "PCIP16",
-                              "PCIP19", "PCIP22", "PCIP23", "PCIP24", "PCIP25", "PCIP26",
-                              "PCIP27", "PCIP29", "PCIP30", "PCIP31", "PCIP38", "PCIP39",
-                              "PCIP40", "PCIP41", "PCIP42", "PCIP43", "PCIP44", "PCIP45",
-                              "PCIP46", "PCIP47", "PCIP48", "PCIP49", "PCIP50", "PCIP51",
-                              "PCIP52", "PCIP54")]
-png("../../images/histogram_majors.png")
-attach(pairs_majors)
-graph_majors <- par(mfrow = c(8, 5))
+pairs_majors1 = clean_data[, c("PCIP01", "PCIP03", "PCIP04", "PCIP05", "PCIP09", "PCIP10", "PCIP11", "PCIP12", "PCIP13")]
+png("../../images/histogram_majors1.png")
+attach(pairs_majors1)
+graph_majors1 <- par(mfrow = c(3, 3))
 hist(PCIP01, main = "Histogram of % of Degrees in Agriculture, Agriculture Operations, and Related Sciences")
 hist(PCIP03, main = "Histogram of % of Degrees in Natural Resources and Conservation")
 hist(PCIP04, main = "Histogram of % of Degrees in Architecture and Related Services")
@@ -191,6 +204,13 @@ hist(PCIP10, main = "Histogram of % of Degrees in Communications Technologies/Te
 hist(PCIP11, main = "Histogram of % of Degrees in Computer and Information Sciences and Support Services")
 hist(PCIP12, main = "Histogram of % of Degrees in Personal and Culinary Services")
 hist(PCIP13, main = "Histogram of % of Degrees in Education")
+par(graph_majors1)
+dev.off()
+
+pairs_majors2 = clean_data[, c("PCIP14", "PCIP15", "PCIP16", "PCIP19", "PCIP22", "PCIP23", "PCIP24", "PCIP25", "PCIP26")]
+png("../../images/histogram_majors2.png")
+attach(pairs_majors2)
+graph_majors2 <- par(mfrow = c(3, 3))
 hist(PCIP14, main = "Histogram of % of Degrees in Engineering")
 hist(PCIP15, main = "Histogram of % of Degrees in Engineering Technologies and Engineering-Related Fields")
 hist(PCIP16, main = "Histogram of % of Degrees in Foreign Languages, Literatures, and Linguistics")
@@ -200,6 +220,13 @@ hist(PCIP23, main = "Histogram of % of Degrees in English Language and Literatur
 hist(PCIP24, main = "Histogram of % of Degrees in Liberal Arts and Sciences, General Studies and Humanities")
 hist(PCIP25, main = "Histogram of % of Degrees in Library Science")
 hist(PCIP26, main = "Histogram of % of Degrees in Biological and Biomedical Sciences")
+par(graph_majors2)
+dev.off()
+
+pairs_majors3 = clean_data[, c("PCIP27", "PCIP29", "PCIP30", "PCIP31", "PCIP38", "PCIP39", "PCIP40", "PCIP41", "PCIP42")]
+png("../../images/histogram_majors3.png")
+attach(pairs_majors3)
+graph_majors3 <- par(mfrow = c(3, 3))
 hist(PCIP27, main = "Histogram of % of Degrees in Mathematics and Statistics")
 hist(PCIP29, main = "Histogram of % of Degrees in Military Technologies and Applied Sciences")
 hist(PCIP30, main = "Histogram of % of Degrees in Multi/Interdisciplinary Studies")
@@ -209,6 +236,13 @@ hist(PCIP39, main = "Histogram of % of Degrees in Theology and Religious Vocatio
 hist(PCIP40, main = "Histogram of % of Degrees in Physical Sciences")
 hist(PCIP41, main = "Histogram of % of Degrees in Science Technologies/Technicians")
 hist(PCIP42, main = "Histogram of % of Degrees in Psychology")
+par(graph_majors3)
+dev.off()
+
+pairs_majors4 = clean_data[, c("PCIP43", "PCIP44", "PCIP45", "PCIP46", "PCIP47", "PCIP48", "PCIP49", "PCIP50", "PCIP51", "PCIP52", "PCIP54")]
+png("../../images/histogram_majors4.png")
+attach(pairs_majors4)
+graph_majors4 <- par(mfrow = c(4, 3))
 hist(PCIP43, main = "Histogram of % of Degrees in Homeland Security, Law Enforcement, Firefighting and Related Protective Services")
 hist(PCIP44, main = "Histogram of % of Degrees in Public Administration and Social Service Professions")
 hist(PCIP45, main = "Histogram of % of Degrees in Social Sciences")
@@ -220,7 +254,7 @@ hist(PCIP50, main = "Histogram of % of Degrees in Visual and Performing Arts")
 hist(PCIP51, main = "Histogram of % of Degrees in Health Professions and Related Programs")
 hist(PCIP52, main = "Histogram of % of Degrees in Business, Management, Marketing, and Related Support Services")
 hist(PCIP54, main = "Histogram of % of Degrees in History")
-par(graph_majors)
+par(graph_majors4)
 dev.off()
 
 #histogram of enrollment by race
@@ -248,20 +282,19 @@ hist(clean_data$C150_4, main = "Histogram of Completion Rate")
 dev.off()
 
 #histogram of completion rate by income level
-pairs_income_completion = clean_data[, c("COMP_ORIG_YR6_RT", "LO_INC_COMP_ORIG_YR6_RT", "LO_INC_COMP_4YR_TRANS_YR6_RT", "MD_INC_COMP_ORIG_YR6_RT",
-                                      "HI_INC_COMP_ORIG_YR6_RT")]
+pairs_income_completion = clean_data[, c("COMP_ORIG_YR6_RT", "LO_INC_COMP_ORIG_YR6_RT", "MD_INC_COMP_ORIG_YR6_RT", "HI_INC_COMP_ORIG_YR6_RT")]
 png("../../images/histogram_income_graduation.png")
 attach(pairs_income_completion)
 graph_income_completion <- par(mfrow = c(2, 2))
 hist(COMP_ORIG_YR6_RT, main = "Histogram of % who completed in 6 years")
 hist(LO_INC_COMP_ORIG_YR6_RT, main = "Histogram of % who completed in 6 years from low-income families")
-hist(LO_INC_COMP_4YR_TRANS_YR6_RT, main = "Histogram of % who completed in 6 years from medium-income families")
+hist(MD_INC_COMP_ORIG_YR6_RT, main = "Histogram of % who completed in 6 years from medium-income families")
 hist(HI_INC_COMP_ORIG_YR6_RT, main = "Histogram of % who completed in 6 years from high-income families")
 par(graph_income_completion)
 dev.off()
+
 #histogram of completion rate by race (black, white, hisp, asian, native american, nhpi)
-pairs_race_completion = clean_data[, c("C150_4_WHITE", "C150_4_BLACK", "C150_4_HISP", "C150_4_AIAN",
-                                       "C150_4_ASIAN", "C150_4_NHPI")]
+pairs_race_completion = clean_data[, c("C150_4_WHITE", "C150_4_BLACK", "C150_4_HISP", "C150_4_AIAN", "C150_4_ASIAN", "C150_4_NHPI")]
 png("../../images/histogram_race_completion")
 attach(pairs_race_completion)
 graph_race_completion <- par(mfrow = c(3, 2))
