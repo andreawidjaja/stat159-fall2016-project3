@@ -12,7 +12,6 @@ selected_data <- data %>%
   filter(CONTROL == 1) #Public schools
 
 #Quantitative variables
-#as.integer(clean_data$ADM_RATE)
 quantitative <- clean_data %>%
   select(ADM_RATE, SATVR25, SATVR75, SATMT25, SATMT75, SATWR25, SATWR75,
                 SATVRMID, SATMTMID, SATWRMID, ACTCM25, ACTCM75, ACTEN25, ACTEN75, ACTMT25, ACTMT75,
@@ -27,21 +26,6 @@ quantitative <- clean_data %>%
                 UGDS_BLACK, UGDS_HISP, UGDS_ASIAN, UGDS_AIAN, UGDS_NHPI, UGDS_2MOR, UGDS_NRA, UGDS_UNKN,
                 PPTUG_EF, NPT4_048_PUB, NPT4_3075_PUB, NPT4_75UP_PUB, COMP_ORIG_YR6_RT,
                 LO_INC_COMP_ORIG_YR6_RT, MD_INC_COMP_ORIG_YR6_RT, HI_INC_COMP_ORIG_YR6_RT)
-
-
-#quantitative <- clean_data %>%
-  #dplyr::select("ADM_RATE", "SATVR25", "SATVR75", "SATMT25", "SATMT75", "SATWR25", "SATWR75",
-         #"SATVRMID", "SATMTMID", "SATWRMID", "ACTCM25", "ACTCM75", "ACTEN25", "ACTEN75", "ACTMT25", "ACTMT75",
-         #"ACTWR25", "ACTWR75", "ACTCMMID", "ACTENMID", "ACTMTMID", "ACTWRMID", "SAT_AVG", "PCIP01", "PCIP03",
-         #"PCIP04", "PCIP05", "PCIP09", "PCIP10", "PCIP11", "PCIP12", "PCIP13", "PCIP14", "PCIP15", "PCIP16",
-         #"PCIP19", "PCIP22", "PCIP23", "PCIP24", "PCIP25", "PCIP26", "PCIP27", "PCIP29", "PCIP30", "PCIP31",
-         #"PCIP38", "PCIP39", "PCIP40", "PCIP41", "PCIP42", "PCIP43", "PCIP44", "PCIP45", "PCIP46", "PCIP47",
-         #"PCIP48", "PCIP49", "PCIP50", "PCIP51", "PCIP52", "PCIP54", "NPT4_PUB", "NPT41_PUB", "NPT42_PUB",
-         #"NPT43_PUB", "NPT44_PUB", "NPT45_PUB", "NUM4_PUB", "NUM41_PUB", "NUM42_PUB", "NUM43_PUB",
-         #"NUM44_PUB", "NUM45_PUB", "COSTT4_A", "TUITIONFEE_IN", "TUITIONFEE_OUT", "AVGFACSAL", "PFTFAC",
-         #"AGE_ENTRY", "FEMALE", "MARRIED", "DEPENDENT", "VETERAN", "FIRST_GEN", "C150_4", "UGDS", "UGDS_WHITE",
-         #"UGDS_BLACK", "UGDS_HISP", "UGDS_ASIAN", "UGDS_AIAN", "UGDS_NHPI", "UGDS_2MOR", "UGDS_NRA", "UGDS_UNKN",
-         #"PPTUG_EF", "NPT4_048_PUB", "NPT4_3075_PUB", "NPT4_75UP_PUB")
 
 #ADM_RATE: Admission rate
 #SATVR25: 25th percentile of SAT scores at the institution (critical reading)
