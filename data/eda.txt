@@ -1,0 +1,61 @@
+Summary Statistics of Quantitative Variables
+
+
+Min, 1st Quartile, Median, Mean, 3rd Quartile, Max of quantitative variables
+
+
+Range of Quantitative Variables
+
+
+IQR of Quantitative Variables
+
+
+Standard Deviation of Quantitative Variables
+
+
+Summary Statistics of Qualitative Variables
+
+
+Table of Frequency of qualitative variables
+     REGION     
+ Min.   :0.000  
+ 1st Qu.:3.000  
+ Median :5.000  
+ Mean   :4.561  
+ 3rd Qu.:6.000  
+ Max.   :9.000  
+
+
+Table of Relative Frequency of qualitative variables
+
+without Proportion
+
+ 1 15 29 37 53 54 62 67 81 150
+                              
+ 1  1  1  1  1  1  1  1  1   1
+
+
+with Proportion
+
+   1  15  29  37  53  54  62  67  81 150
+                                        
+ 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
+
+
+Additional data
+
+
+Matrix of Correlation
+                    X         TV       Radio   Newspaper       Sales
+X          1.00000000 0.01771469 -0.11068044 -0.15494414 -0.05161625
+TV         0.01771469 1.00000000  0.05480866  0.05664787  0.78222442
+Radio     -0.11068044 0.05480866  1.00000000  0.35410375  0.57622257
+Newspaper -0.15494414 0.05664787  0.35410375  1.00000000  0.22829903
+Sales     -0.05161625 0.78222442  0.57622257  0.22829903  1.00000000
+
+
+Anova's between Completion Rate and qualitative variables
+Call:
+   aov(formula = C150_4 ~ REGION, data = selected_data)
+
+
