@@ -1,0 +1,18 @@
+
+
+\section{Methodology}
+
+\subsection{Multiple Linear Regression}
+
+The standard multiple linear model takes the form $$ Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + \beta_3X_3 + ... + \beta_pX_p + \epsilon $$ with $Y$ representing the response variable and $X_i$ representing the $i_th$ predictor variable. The coefficient $\beta_i$ quantifies the association between the $i_th$ predictor variable and the response. It is the average effect on $Y$ for every unit increase in $X_i$, holding all other predictors fixed.  
+
+As public 
+
+For our case, our linear model is in the form,
+
+$$ Balance = \beta_0 + \beta_1xIncome + \beta_2xLimit + \beta_3xRating + ... + \beta_pxEthnicity + \epsilon $$
+
+
+\subsection{Variable Selection}
+Forward stepwise selection - Starting with no variables in the model with only the intercept , we then proceed by adding a variable with the lowest RSS (greatest additional improvement). This is continued until some stopping rule is satisfied.
+* Backward stepwise selection - Starting with all variables in the model, we proceed to the next step by removing the variable with the largest p-value. We refit the model, and remove the variable with the largest p-value again. We stop when all p-values are below a certain threshold.
