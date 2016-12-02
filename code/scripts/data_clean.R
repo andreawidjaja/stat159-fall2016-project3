@@ -1,11 +1,13 @@
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3/code/scripts")
 data=read.csv("../../data/MERGED2014_15_PP.csv")
 #clean_data=read.csv("../../data/clean_data.csv")
-library(dplyr)
 
 #read data set
 args <- commandArgs(trailingOnly=TRUE)
 data <- read.csv(args[1])
+library(dplyr)
+data=read.csv("../../data/MERGED2014_15_PP.csv")
+
 
 #data cleaning
 selected_data <- data %>%
@@ -66,7 +68,6 @@ clean_data$LOCALE2=NULL # Too many NULL values here
 
 
 clean_data$LOCALE2=NULL # Too many NULL values here 
->>>>>>> variable_selection
 clean_data$ADM_RATE=as.numeric(as.character(clean_data$ADM_RATE)) #admission rates shouldnt be a factor
 clean_data$ADM_RATE_ALL=NULL #no need for two admission rates... 99% correlation between above adm rate
 clean_data[,13:85]=apply(clean_data[,13:85], 2, as.numeric) #converting all sat/act scores and percentage of people in certain degrees into numeric variables
