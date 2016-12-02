@@ -1,3 +1,13 @@
+
+<<setup, include=FALSE, cache=FALSE, echo=FALSE>>=
+library(knitr)
+# set global chunk options
+
+@
+
+
+\section{Data}
+
 _College Scorecard_ has record of colleges' admissions rate, graduation rate, and distribution of students based on race, income, and status from 1996 until 2015. For this project, we chose the most recent dataset, _MERGED2014_15_PP.csv_, which consists of `7703` colleges and `1743` variables.
 
 Before starting any analysis, we clean the data by filtering only the data we want, and removing null values. Since we are a public policy researcher working for the government, we only want to take into account public schools. To use more consistent and reliable data, we futher filtered data choosing only main campuses, and colleges that awards predominently bachelor degrees.

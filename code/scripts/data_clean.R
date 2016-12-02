@@ -1,4 +1,3 @@
-#----------------------------------------------------------------------
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3/code/scripts")
 data=read.csv("../../data/MERGED2014_15_PP.csv")
 #clean_data=read.csv("../../data/clean_data.csv")
@@ -50,6 +49,9 @@ for(i in 1:ncol(clean_data)){
 }
 
 #converting types of variables that don't make any sense (and getting rid of some variables)
+
+
+#Converting types of variables that don't make any sense (and getting rid of some variables)
 clean_data$PREDDEG=as.factor(clean_data$PREDDEG) #PREDDEG tells us the predominant type of degree given in a univ
 clean_data$CITY=NULL  #Don't need city variable in my opinion
 clean_data$ZIP=NULL #Don't need zip code variable in my opinion
@@ -61,6 +63,10 @@ clean_data$ADM_RATE=as.numeric(clean_data$ADM_RATE) #Admission rates shouldn't b
 clean_data[,13:85]=apply(clean_data[,13:85], 2, as.numeric) #Converting all sat/act scores and percentage of people in certain degrees into numeric variables
 clean_data$LOCALE2=NULL # Too many NULL values here
 clean_data$LOCALE2=NULL # Too many NULL values here
+
+
+clean_data$LOCALE2=NULL # Too many NULL values here 
+>>>>>>> variable_selection
 clean_data$ADM_RATE=as.numeric(as.character(clean_data$ADM_RATE)) #admission rates shouldnt be a factor
 clean_data$ADM_RATE_ALL=NULL #no need for two admission rates... 99% correlation between above adm rate
 clean_data[,13:85]=apply(clean_data[,13:85], 2, as.numeric) #converting all sat/act scores and percentage of people in certain degrees into numeric variables
@@ -85,6 +91,7 @@ clean_data[,3:7]=apply(clean_data[,3:7] , 2, as.numeric)
 for(i in 1:ncol(clean_data)){
   clean_data[is.na(clean_data[,i]),i]=mean(clean_data[,i], na.rm=TRUE)
 }
+
 
 #converting categorical columns into multiple binary columns
 clean_data=model.matrix(~., clean_data)
