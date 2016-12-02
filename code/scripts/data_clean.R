@@ -1,6 +1,6 @@
 #----------------------------------------------------------------------
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3/code/scripts")
-#data=read.csv("../../data/MERGED2014_15_PP.csv")
+data=read.csv("../../data/MERGED2014_15_PP.csv")
 #clean_data=read.csv("../../data/clean_data.csv")
 library(dplyr)
 
@@ -28,7 +28,8 @@ x_variables <- selected_data %>%
          VETERAN, FIRST_GEN)
 
 y_variables <- selected_data %>%
-  select(INSTNM, C150_4, C150_4_HISP, C150_4_AIAN, C150_4_WHITE, C150_4_BLACK, C150_4_ASIAN, C150_4_NHPI, COMP_ORIG_YR6_RT, COMP_4YR_TRANS_YR6_RT, LO_INC_COMP_ORIG_YR6_RT, LO_INC_COMP_4YR_TRANS_YR6_RT, MD_INC_COMP_ORIG_YR6_RT,
+  select(INSTNM, C150_4, C150_4_HISP, C150_4_AIAN, C150_4_WHITE, C150_4_BLACK, C150_4_ASIAN, C150_4_NHPI, COMP_ORIG_YR6_RT, COMP_4YR_TRANS_YR6_RT,
+         LO_INC_COMP_ORIG_YR6_RT, LO_INC_COMP_4YR_TRANS_YR6_RT, MD_INC_COMP_ORIG_YR6_RT,
          MD_INC_COMP_4YR_TRANS_YR6_RT, HI_INC_COMP_ORIG_YR6_RT, HI_INC_COMP_4YR_TRANS_YR6_RT, DEP_COMP_ORIG_YR6_RT, DEP_COMP_4YR_TRANS_YR6_RT,
          IND_COMP_ORIG_YR6_RT, IND_COMP_4YR_TRANS_YR6_RT, FEMALE_COMP_ORIG_YR6_RT, FEMALE_COMP_4YR_TRANS_YR6_RT, MALE_COMP_ORIG_YR6_RT,
          MALE_COMP_4YR_TRANS_YR6_RT, FIRSTGEN_COMP_ORIG_YR6_RT, FIRSTGEN_COMP_4YR_TRANS_YR6_RT, NOT1STGEN_COMP_ORIG_YR6_RT,
