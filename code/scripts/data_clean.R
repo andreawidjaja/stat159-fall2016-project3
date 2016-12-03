@@ -85,6 +85,26 @@ for(i in 1:ncol(clean_data)){
   clean_data[is.na(clean_data[,i]),i]=mean(clean_data[,i], na.rm=TRUE)
 }
 
+frequency=as.numeric(table(clean_data$REGION))
+proportions=frequency/sum(frequency)
+rownames=names(table(clean_data$REGION))
+df=data.frame(proportions, frequency)
+rownames(df)=rownames
+
+png("../../images/conditional_boxplot_region.png")
+plot(table(clean_data$REGION))
+dev.off()
+#Barchart for Region qualitative variable
+png("../../images/barchart_region.png")
+barplot(table(clean_data$REGION), main="Barchart of Region")
+dev.off
+#Conditional Boxplots for Region qualitative vairables
+png("../../images/conditional_boxplot_region.png")
+boxplot(C150_4 ~ REGION, data=clean_data, main="Conditional Boxplot of Region")
+dev.off
+#Anova's between Completion rate and all qualitative variables
+anova <- aov(C150_4~REGION, clean_data)
+
 #converting categorical columns into multiple binary columns
 clean_data=model.matrix(~., clean_data)
 clean_data=as.data.frame(clean_data)[,-1]

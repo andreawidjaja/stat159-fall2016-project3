@@ -1,0 +1,12 @@
+<<setup, include=FALSE, cache=FALSE, echo=FALSE>>=
+library(knitr)
+# set global chunk options
+
+@
+
+
+<< child=00.abstract.Rnw
+<< child=01.introduction.Rnw
+<< child=02.
+<< child=03.methods.Rnw
+<< child-
