@@ -29,7 +29,7 @@ bic_var=lm_obj$coefficients[-1]
 
 
 #Nick, you can do the forward selection stuff with p-values. you'll have to make a function that does that since there's no built in R thing that does that
-forward_p<-function(p,data)
+forward_p<-function(data,p){
   #data argumented must formatted such that the last column is the response variable
   #p must be the number of predictor variables to use for the model, ie after addidng p variables to our model
   #we stop adding predictors to our model, p must be >= 1
@@ -66,4 +66,5 @@ for(i in seq(1:p)) {
   }
   #store the predictor whose t-value is the lowest when added to the model
   models[i]<-which.min(temp1)
+  }
 }

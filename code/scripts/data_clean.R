@@ -1,12 +1,13 @@
-#----------------------------------------------------------------------
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3/code/scripts")
-#data=read.csv("../../data/MERGED2014_15_PP.csv")
+data=read.csv("../../data/MERGED2014_15_PP.csv")
 #clean_data=read.csv("../../data/clean_data.csv")
-library(dplyr)
 
 #read data set
 args <- commandArgs(trailingOnly=TRUE)
 data <- read.csv(args[1])
+library(dplyr)
+data=read.csv("../../data/MERGED2014_15_PP.csv")
+
 
 #data cleaning
 selected_data <- data %>%
@@ -28,7 +29,8 @@ x_variables <- selected_data %>%
          VETERAN, FIRST_GEN)
 
 y_variables <- selected_data %>%
-  select(INSTNM, C150_4, C150_4_HISP, C150_4_AIAN, C150_4_WHITE, C150_4_BLACK, C150_4_ASIAN, C150_4_NHPI, COMP_ORIG_YR6_RT, COMP_4YR_TRANS_YR6_RT, LO_INC_COMP_ORIG_YR6_RT, LO_INC_COMP_4YR_TRANS_YR6_RT, MD_INC_COMP_ORIG_YR6_RT,
+  select(INSTNM, C150_4, C150_4_HISP, C150_4_AIAN, C150_4_WHITE, C150_4_BLACK, C150_4_ASIAN, C150_4_NHPI, COMP_ORIG_YR6_RT, COMP_4YR_TRANS_YR6_RT,
+         LO_INC_COMP_ORIG_YR6_RT, LO_INC_COMP_4YR_TRANS_YR6_RT, MD_INC_COMP_ORIG_YR6_RT,
          MD_INC_COMP_4YR_TRANS_YR6_RT, HI_INC_COMP_ORIG_YR6_RT, HI_INC_COMP_4YR_TRANS_YR6_RT, DEP_COMP_ORIG_YR6_RT, DEP_COMP_4YR_TRANS_YR6_RT,
          IND_COMP_ORIG_YR6_RT, IND_COMP_4YR_TRANS_YR6_RT, FEMALE_COMP_ORIG_YR6_RT, FEMALE_COMP_4YR_TRANS_YR6_RT, MALE_COMP_ORIG_YR6_RT,
          MALE_COMP_4YR_TRANS_YR6_RT, FIRSTGEN_COMP_ORIG_YR6_RT, FIRSTGEN_COMP_4YR_TRANS_YR6_RT, NOT1STGEN_COMP_ORIG_YR6_RT,
@@ -49,6 +51,9 @@ for(i in 1:ncol(clean_data)){
 }
 
 #converting types of variables that don't make any sense (and getting rid of some variables)
+
+
+#Converting types of variables that don't make any sense (and getting rid of some variables)
 clean_data$PREDDEG=as.factor(clean_data$PREDDEG) #PREDDEG tells us the predominant type of degree given in a univ
 clean_data$CITY=NULL  #Don't need city variable in my opinion
 clean_data$ZIP=NULL #Don't need zip code variable in my opinion
@@ -60,6 +65,9 @@ clean_data$ADM_RATE=as.numeric(clean_data$ADM_RATE) #Admission rates shouldn't b
 clean_data[,13:85]=apply(clean_data[,13:85], 2, as.numeric) #Converting all sat/act scores and percentage of people in certain degrees into numeric variables
 clean_data$LOCALE2=NULL # Too many NULL values here
 clean_data$LOCALE2=NULL # Too many NULL values here
+
+
+clean_data$LOCALE2=NULL # Too many NULL values here 
 clean_data$ADM_RATE=as.numeric(as.character(clean_data$ADM_RATE)) #admission rates shouldnt be a factor
 clean_data$ADM_RATE_ALL=NULL #no need for two admission rates... 99% correlation between above adm rate
 clean_data[,13:85]=apply(clean_data[,13:85], 2, as.numeric) #converting all sat/act scores and percentage of people in certain degrees into numeric variables
@@ -85,6 +93,7 @@ for(i in 1:ncol(clean_data)){
   clean_data[is.na(clean_data[,i]),i]=mean(clean_data[,i], na.rm=TRUE)
 }
 
+<<<<<<< HEAD
 frequency=as.numeric(table(clean_data$REGION))
 proportions=frequency/sum(frequency)
 rownames=names(table(clean_data$REGION))
@@ -104,6 +113,8 @@ boxplot(C150_4 ~ REGION, data=clean_data, main="Conditional Boxplot of Region")
 dev.off
 #Anova's between Completion rate and all qualitative variables
 anova <- aov(C150_4~REGION, clean_data)
+=======
+>>>>>>> 7956c25204b0fd4e896277e7e975418ef014449b
 
 #converting categorical columns into multiple binary columns
 clean_data=model.matrix(~., clean_data)

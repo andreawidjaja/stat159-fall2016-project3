@@ -27,7 +27,17 @@ server <- function(input, output){
     else if(input$text=="BIC"){
       output$variables=renderTable({bic_select(df,input$radio,input$var_num)})
     }
+    else if(input$text=="P-Value"){
+      output$variables=renderTable({forward_p(df, input$var_num)})
+    }
   })
 }
 
 shinyApp(ui = ui, server = server)
+
+
+
+
+
+df=choosing_response(clean_data, "C150_4")
+sample=forward_p(clean_data, 5)
