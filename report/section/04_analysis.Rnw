@@ -1,9 +1,9 @@
 \section{Analysis}
 
-## Exploratory Data Analysis
+\subsection{Exploratory Data Analysis}
 Before building our model, we first wanted to understand the data that we were building our model on. Below, I've shown the summary statistics for the quantitative variables in our model. 
 
-### Quantitative variables
+\subsection{Quantitative variables}
 Summary Statistics of Quantitative Variables
 Min, 1st Quartile, Median, Mean, 3rd Quartile, Max of quantitative variables
 \input{quantitative_summary, file = '../../data/eda.txt'}
@@ -16,7 +16,7 @@ Standard Deviation of Quantitative Variables
 
 I've also attached histograms below, which describe the distributions of some of the more relevant quantitative variables. 
 
-Histogram
+\subsection{Histogram}
 \includegraphics{../../images/histogram_ACT_avg.png}
 \includegraphics{../../images/histogram_SAT_avg.png}
 \includegraphics{../../images/histogram_majors.png}
@@ -26,7 +26,14 @@ Histogram
 \includegraphics{../../images/histogram_income_graduation.png}
 \includegraphics{../../images/histogram_race_completion}
 
+\subsection{Qualitative variables}
+Summary Statistics of Qualitative Variable
+\input{summary_qual, file = '../../data/eda.txt'}
+Table of Frequency of qualitative variable
+\input{freq_qual, file = '../../data/eda.txt'}
 
-
+\subsection{Exploratory Graphics (qualitative variables)}
+\includegraphics{../../images/barchart_region.png}
+\includegraphics{../../images/conditional_boxplot_region.png}
 
 ### SHOW LASSO AND BIC PLOTS
