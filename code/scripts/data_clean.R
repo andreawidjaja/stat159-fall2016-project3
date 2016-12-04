@@ -62,14 +62,14 @@ clean_data$LOCALE2=NULL # Too many NULL values here
 clean_data$LOCALE2=NULL # Too many NULL values here
 
 
-clean_data$LOCALE2=NULL # Too many NULL values here 
+clean_data$LOCALE2=NULL # Too many NULL values here
 clean_data$ADM_RATE=as.numeric(as.character(clean_data$ADM_RATE)) #admission rates shouldnt be a factor
 clean_data$ADM_RATE_ALL=NULL #no need for two admission rates... 99% correlation between above adm rate
 clean_data[,13:85]=apply(clean_data[,13:85], 2, as.numeric) #converting all sat/act scores and percentage of people in certain degrees into numeric variables
 clean_data[,86:ncol(clean_data)]=apply(clean_data[,86:ncol(clean_data)], 2, as.numeric) #Converting all these factors into numeric variables
 clean_data$CURROPER=NULL #Takes on only 1 variable
 clean_data[,7:85]=apply(clean_data[,7:85], 2, as.numeric) #converting all sat/act scores and percentage of people in certain degrees into numeric variables
-clean_data<-subset(clean_data,select=-c(86:105,107,120:139,141,151:162,164)) #Removing variables with several Null values
+clean_data<-subset(clean_data,select=-c(86:105,107,120, 122, 124, 126:139,151:162,164)) #Removing variables with several Null values
 clean_data[,86:ncol(clean_data)]=apply(clean_data[,86:ncol(clean_data)], 2, as.numeric) #converting all these factors  into numeric variables
 clean_data$CURROPER=NULL #Takes on only 1 variable
 
