@@ -11,4 +11,4 @@ for (i in c(10:ncol(scaled_data))){
 }
 
 #export scaled data
-write.csv(scaled_data, file = '../../data/scaled_data.csv')
+write.csv(scaled_data, file = '../../data/generated_data/scaled_data.csv')
