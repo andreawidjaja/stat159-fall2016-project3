@@ -1,6 +1,7 @@
 #Reading in Data
 args<-commandArgs(trailingOnly=TRUE)
-data <- read.csv(args[1])
+clean_data <- read.csv(args[1])
+#argument should be scaled_data.csv
 library(leaps)
 library(glmnet)
 
