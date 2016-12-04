@@ -41,6 +41,9 @@ forward_p<-function(data,p){
   predictors<-data[,-c(length(colnames(data)))]
 response<-data[,length(colnames(data))]
 
+predictor<-colnames(data)[dim(data)[2]]
+
+
 #resultant list of all models
 models<-vector(length=p)
 
@@ -51,7 +54,7 @@ for(i in seq(1:p)) {
     #Initial loop to fill in temp1
     if (!models[1]){
       #Store t-value of regression of response variable ran on just the j'th feature of predictors
-      temp1[j]<-summary(lm.fit(x=predictors[,j],y=response))$coefficients[i+1,4]
+      temp1[j]<-summary(lm(paste(predictor,"~."),data=data))$coefficients[i+1,4]
     } 
     else {
       #Skip if predictor is already in our model so far
@@ -62,7 +65,7 @@ for(i in seq(1:p)) {
       }
       else {
         #Store t-value of newly added predictor variable to regression model     
-        temp1[j]<-summary(lm.fit(x=predictors[,c((models[models != 0]),j)],y=response))$coefficients[i+1,4]
+        temp1[j]<-summary(lm(paste(predictor,"~.",sep=""),data=data[,c((models[models != 0]),j,dim(data)[2])]))$coefficients[i+1,4]
       }
     }
   }

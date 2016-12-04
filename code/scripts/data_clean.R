@@ -1,12 +1,11 @@
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3/code/scripts")
-data=read.csv("../../data/MERGED2014_15_PP.csv")
+#data=read.csv("../../data/MERGED2014_15_PP.csv")
 #clean_data=read.csv("../../data/clean_data.csv")
 
 #read data set
 args <- commandArgs(trailingOnly=TRUE)
 data <- read.csv(args[1])
 library(dplyr)
-data=read.csv("../../data/MERGED2014_15_PP.csv")
 
 
 #data cleaning
@@ -68,7 +67,6 @@ clean_data$LOCALE2=NULL # Too many NULL values here
 clean_data$ADM_RATE=as.numeric(as.character(clean_data$ADM_RATE)) #admission rates shouldnt be a factor
 clean_data$ADM_RATE_ALL=NULL #no need for two admission rates... 99% correlation between above adm rate
 clean_data[,13:85]=apply(clean_data[,13:85], 2, as.numeric) #converting all sat/act scores and percentage of people in certain degrees into numeric variables
-clean_data[,c(86:105,107,114:133,135,145:156,158)]=NULL #Removing variables with several Null values
 clean_data[,86:ncol(clean_data)]=apply(clean_data[,86:ncol(clean_data)], 2, as.numeric) #Converting all these factors into numeric variables
 clean_data$CURROPER=NULL #Takes on only 1 variable
 clean_data[,7:85]=apply(clean_data[,7:85], 2, as.numeric) #converting all sat/act scores and percentage of people in certain degrees into numeric variables
@@ -91,8 +89,8 @@ for(i in 1:ncol(clean_data)){
 }
 
 #clean race and income and y and x variables
-write.csv(clean_data, file = '../../data/clean_data.csv')
-write.csv(race_and_income, file='../../data/race_and_income.csv')
-write.csv(y_variables, file='../../data/y_variables.csv')
-write.csv(x_variables, file='../../data/x_variables.csv')
+write.csv(clean_data, file = 'data/clean_data.csv')
+write.csv(race_and_income, file='data/race_and_income.csv')
+write.csv(y_variables, file='data/y_variables.csv')
+write.csv(x_variables, file='data/x_variables.csv')
 
