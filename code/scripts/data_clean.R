@@ -60,14 +60,13 @@ clean_data$ADM_RATE=as.numeric(clean_data$ADM_RATE) #Admission rates shouldn't b
 clean_data$LOCALE2=NULL # Too many NULL values here
 clean_data$LOCALE2=NULL # Too many NULL values here
 
-
-clean_data$LOCALE2=NULL # Too many NULL values here 
+clean_data$LOCALE2=NULL # Too many NULL values here
 clean_data$ADM_RATE=as.numeric(as.character(clean_data$ADM_RATE)) #admission rates shouldnt be a factor
 clean_data$ADM_RATE_ALL=NULL #no need for two admission rates... 99% correlation between above adm rate
 clean_data[,7:84]=apply(clean_data[,7:84], 2, as.numeric) #converting all sat/act scores and percentage of people in certain degrees into numeric variables
 clean_data[,85:ncol(clean_data)]=apply(clean_data[,85:ncol(clean_data)], 2, as.numeric) #Converting all these factors into numeric variables
 clean_data$CURROPER=NULL #Takes on only 1 variable
-clean_data<-subset(clean_data,select=-c(85:105,106,119:138,140,151:162,164)) #Removing variables with several Null values
+clean_data<-subset(clean_data,select=-c(85:105,106,119:138,140,150:161,163)) #Removing variables with several Null values
 clean_data$CURROPER=NULL #Takes on only 1 variable
 
 #getting rid of 4 more useless variables
@@ -76,8 +75,7 @@ clean_data$UNITID=NULL
 clean_data$MAIN=NULL #all of our schools are main campuses
 clean_data$CONTROL=NULL # all of our schools are public
 clean_data$PREDDEG=NULL # all values are 3, so useless variable
-clean_data[,3:7]=apply(clean_data[,3:7] , 2, as.numeric)
-clean_data[,c(91,102,103)]=NULL
+clean_data[,c(18,19,23,91)]=NULL
 #dealing with NA values... lets replace each NA value with the column average
 
 for(i in 1:ncol(clean_data)){

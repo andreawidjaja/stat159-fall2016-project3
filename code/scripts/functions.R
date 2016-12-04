@@ -2,7 +2,7 @@ library(leaps)
 library(glmnet)
 
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3/code/scripts")
-#clean_data=read.csv("../../data/clean_data.csv")[,-1]
+#clean_data=read.csv("data/clean_data.csv")[,-1]
 #scaled_data=read.csv("../../data/scaled_data.csv")[,-1]
 
 
@@ -81,5 +81,11 @@ forward_p<-function(data,p){
     #store the predictor whose t-value is the lowest when added to the model
     models[i]<-which.min(temp1)
   }
-  return(models)
+  coefficients<-summary(lm(paste(predictor,"~.",sep=""),data=data[,c(models,dim(data[2]))]))$coefficients
+  names<-names(coefficients[,2])[2:p+1]
+  value<-coefficients[2:p+1,2]
+  info<-data_frame(models,names,value)
+  
+  
+  return(info)
 }

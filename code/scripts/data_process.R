@@ -1,5 +1,5 @@
 #Read data sets
-clean_data <- read.csv('../../data/clean_data.csv')
+clean_data <- read.csv('../../data/generated_data/clean_data.csv')
 
 #converting categorical columns into multiple binary columns
 clean_data$REGION=as.factor(clean_data$REGION)
@@ -13,7 +13,4 @@ for (i in c(10:ncol(scaled_data))){
 }
 
 #export scaled data
-write.csv(scaled_data, file = '../../data/scaled_data.csv')
-=======
 write.csv(scaled_data, file = '../../data/generated_data/scaled_data.csv')
->>>>>>> b7b6630e95c29dbf600b470d80b3bfb54e83c3d1
