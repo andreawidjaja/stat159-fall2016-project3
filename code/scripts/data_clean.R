@@ -1,12 +1,11 @@
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3/code/scripts")
-data=read.csv("../../data/MERGED2014_15_PP.csv")
+#data=read.csv("../../data/MERGED2014_15_PP.csv")
 #clean_data=read.csv("../../data/clean_data.csv")
 
 #read data set
 args <- commandArgs(trailingOnly=TRUE)
 data <- read.csv(args[1])
 library(dplyr)
-data=read.csv("../../data/MERGED2014_15_PP.csv")
 
 
 #data cleaning
@@ -90,8 +89,8 @@ for(i in 1:ncol(clean_data)){
 }
 
 #clean race and income and y and x variables
-write.csv(clean_data, file = '../../data/clean_data.csv')
-write.csv(race_and_income, file='../../data/race_and_income.csv')
-write.csv(y_variables, file='../../data/y_variables.csv')
-write.csv(x_variables, file='../../data/x_variables.csv')
+write.csv(clean_data, file = 'data/clean_data.csv')
+write.csv(race_and_income, file='data/race_and_income.csv')
+write.csv(y_variables, file='data/y_variables.csv')
+write.csv(x_variables, file='data/x_variables.csv')
 
