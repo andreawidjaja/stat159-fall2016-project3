@@ -1,0 +1,5 @@
+\section{Conclusion}
+
+Based on our analysis from lasso and ... regression, we can conclude that ..., ... , ... are the most prominent variables that affects 6 years completion rate.
+
+As public policy researchers, we will advice the government to fund colleges that have the highest percentage of ... as it shows that ... have the highest completion rate.
