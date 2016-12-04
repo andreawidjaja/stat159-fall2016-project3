@@ -1,7 +1,7 @@
 \section{Analysis}
 
 \subsection{Exploratory Data Analysis}
-Before building our model, we first wanted to understand the data that we were building our model on. Below, I've shown the summary statistics for the quantitative variables in our model. 
+Before building our model, we first wanted to understand the data that we were building our model on. Below, I've shown the summary statistics for the quantitative variables in our model.
 
 \subsection{Quantitative variables}
 Summary Statistics of Quantitative Variables
@@ -14,12 +14,17 @@ IQR of Quantitative Variables
 Standard Deviation of Quantitative Variables
 \input{quantitative_SD, file = '../../data/eda.txt'}
 
-I've also attached histograms below, which describe the distributions of some of the more relevant quantitative variables. 
+I've also attached histograms below, which describe the distributions of some of the more relevant quantitative variables.
 
 \subsection{Histogram}
 \includegraphics{../../images/histogram_ACT_avg.png}
+Total score is 36
 \includegraphics{../../images/histogram_SAT_avg.png}
-\includegraphics{../../images/histogram_majors.png}
+Total score is 2400
+\includegraphics{../../images/histogram_majors1.png}
+\includegraphics{../../images/histogram_majors2.png}
+\includegraphics{../../images/histogram_majors3.png}
+\includegraphics{../../images/histogram_majors4.png}
 \includegraphics{../../images/histogram_race_enrollment.png}
 \includegraphics{../../images/histogram_net_price.png}
 \includegraphics{../../images/histogram_completion.png}
