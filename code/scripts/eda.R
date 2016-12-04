@@ -266,11 +266,10 @@ hist(clean_data$C150_4, main = "Histogram of Completion Rate", xlab = "Completio
 dev.off()
 
 #histogram of completion rate by income level
-pairs_income_completion = clean_data[, c("COMP_ORIG_YR6_RT", "LO_INC_COMP_ORIG_YR6_RT", "MD_INC_COMP_ORIG_YR6_RT", "HI_INC_COMP_ORIG_YR6_RT")]
+pairs_income_completion = clean_data[, c("LO_INC_COMP_ORIG_YR6_RT", "MD_INC_COMP_ORIG_YR6_RT", "HI_INC_COMP_ORIG_YR6_RT")]
 png("../../images/histogram_income_graduation.png")
 attach(pairs_income_completion)
 graph_income_completion <- par(mfrow = c(2, 2))
-hist(COMP_ORIG_YR6_RT, main = "Histogram of % who Completed in 6 Years", xlab = "6 years Completion Rate")
 hist(LO_INC_COMP_ORIG_YR6_RT, main = "Histogram of % who Completed in 6 Years", xlab = "Low-income Families")
 hist(MD_INC_COMP_ORIG_YR6_RT, main = "Histogram of % who Completed in 6 Years", xlab = "Medium-income Families")
 hist(HI_INC_COMP_ORIG_YR6_RT, main = "Histogram of % who Completed in 6 Years", xlab = "High-income Families")
