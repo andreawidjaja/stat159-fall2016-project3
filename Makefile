@@ -3,10 +3,15 @@
 raw_data = data/input_data/MERGED2014_15_PP.csv
 
 #Phony data target to make clean data
-data: data_clean.R
+data: data/generated_data/clean_data.csv data/generated_data/scaled_data.csv
 
-#script that cleans data
-data_clean.R:
+
+#runs script that scales data
+data/generated_data/scaled_data.csv: data/generated_data/clean_data.csv
+	Rscript code/scripts/data_process.R $^
+
+#runs script that cleans and formats data
+data/generated_data/clean_data.csv:
 	Rscript code/scripts/data_clean.R $(raw_data)
 
 #creates a text files with exploratory data analysis information of data set

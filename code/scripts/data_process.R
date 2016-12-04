@@ -1,5 +1,6 @@
 #Read data sets
-clean_data <- read.csv('../../data/generated_data/clean_data.csv')
+args <- commandArgs(trailingOnly=TRUE)
+clean_data <- read.csv(args[1])
 
 #converting categorical columns into multiple binary columns
 clean_data$REGION=as.factor(clean_data$REGION)
