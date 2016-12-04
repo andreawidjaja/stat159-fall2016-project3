@@ -17,7 +17,7 @@ selected_data <- data %>%
 
 #variables we are going to use
 x_variables <- selected_data %>%
-  select(UNITID, PREDDEG, MAIN, CONTROL, INSTNM, CITY, ZIP, ST_FIPS, REGION, LOCALE2, ADM_RATE, SATVR25, SATVR75, SATMT25, SATMT75, SATWR25,
+  dplyr::select(UNITID, PREDDEG, MAIN, CONTROL, INSTNM, CITY, ZIP, ST_FIPS, REGION, LOCALE2, ADM_RATE, SATVR25, SATVR75, SATMT25, SATMT75, SATWR25,
          SATWR75, SATVRMID, SATMTMID, SATWRMID, ACTCM25, ACTCM75, ACTEN25, ACTEN75, ACTMT25, ACTMT75, ACTWR25, ACTWR75, ACTCMMID,
          ACTENMID, ACTMTMID, ACTWRMID, SAT_AVG, PCIP01, PCIP03, PCIP04, PCIP05, PCIP09, PCIP10, PCIP11, PCIP12, PCIP13,
          PCIP14, PCIP15, PCIP16, PCIP19, PCIP22, PCIP23, PCIP24, PCIP25, PCIP26, PCIP27, PCIP29, PCIP30, PCIP31, PCIP38, PCIP39,
@@ -29,7 +29,7 @@ x_variables <- selected_data %>%
          VETERAN, FIRST_GEN)
 
 y_variables <- selected_data %>%
-  select(INSTNM, C150_4, C150_4_HISP, C150_4_AIAN, C150_4_WHITE, C150_4_BLACK, C150_4_ASIAN, C150_4_NHPI, COMP_ORIG_YR6_RT, COMP_4YR_TRANS_YR6_RT,
+  dplyr::select(INSTNM, C150_4, C150_4_HISP, C150_4_AIAN, C150_4_WHITE, C150_4_BLACK, C150_4_ASIAN, C150_4_NHPI, COMP_ORIG_YR6_RT, COMP_4YR_TRANS_YR6_RT,
          LO_INC_COMP_ORIG_YR6_RT, LO_INC_COMP_4YR_TRANS_YR6_RT, MD_INC_COMP_ORIG_YR6_RT,
          MD_INC_COMP_4YR_TRANS_YR6_RT, HI_INC_COMP_ORIG_YR6_RT, HI_INC_COMP_4YR_TRANS_YR6_RT, DEP_COMP_ORIG_YR6_RT, DEP_COMP_4YR_TRANS_YR6_RT,
          IND_COMP_ORIG_YR6_RT, IND_COMP_4YR_TRANS_YR6_RT, FEMALE_COMP_ORIG_YR6_RT, FEMALE_COMP_4YR_TRANS_YR6_RT, MALE_COMP_ORIG_YR6_RT,
@@ -37,7 +37,7 @@ y_variables <- selected_data %>%
          NOT1STGEN_COMP_4YR_TRANS_YR6_RT)
 
 race_and_income <- selected_data %>%
-  select(INSTNM, UGDS, UG, UGDS_WHITE, UGDS_BLACK, UGDS_HISP, UGDS_ASIAN, UGDS_AIAN, UGDS_NHPI, UGDS_2MOR, UGDS_NRA, UGDS_UNKN, UGDS_WHITENH,
+  dplyr::select(INSTNM, UGDS, UG, UGDS_WHITE, UGDS_BLACK, UGDS_HISP, UGDS_ASIAN, UGDS_AIAN, UGDS_NHPI, UGDS_2MOR, UGDS_NRA, UGDS_UNKN, UGDS_WHITENH,
          UGDS_BLACKNH, UGDS_API, UGDS_AIANOLD, UGDS_HISPOLD, UG_NRA, UG_UNKN, UG_WHITENH, UG_BLACKNH, UG_API, UG_AIANOLD, UG_HISPOLD,
          PPTUG_EF, PPTUG_EF2, CURROPER, NPT4_048_PUB, NPT4_3075_PUB, NPT4_75UP_PUB)
 
@@ -49,9 +49,6 @@ v=vector()
 for(i in 1:ncol(clean_data)){
   v[i]=class(clean_data[,i])
 }
-
-#converting types of variables that don't make any sense (and getting rid of some variables)
-
 
 #Converting types of variables that don't make any sense (and getting rid of some variables)
 clean_data$PREDDEG=as.factor(clean_data$PREDDEG) #PREDDEG tells us the predominant type of degree given in a univ
@@ -91,38 +88,6 @@ clean_data[,3:7]=apply(clean_data[,3:7] , 2, as.numeric)
 
 for(i in 1:ncol(clean_data)){
   clean_data[is.na(clean_data[,i]),i]=mean(clean_data[,i], na.rm=TRUE)
-}
-
-<<<<<<< HEAD
-frequency=as.numeric(table(clean_data$REGION))
-proportions=frequency/sum(frequency)
-rownames=names(table(clean_data$REGION))
-df=data.frame(proportions, frequency)
-rownames(df)=rownames
-
-png("../../images/conditional_boxplot_region.png")
-plot(table(clean_data$REGION))
-dev.off()
-#Barchart for Region qualitative variable
-png("../../images/barchart_region.png")
-barplot(table(clean_data$REGION), main="Barchart of Region")
-dev.off
-#Conditional Boxplots for Region qualitative vairables
-png("../../images/conditional_boxplot_region.png")
-boxplot(C150_4 ~ REGION, data=clean_data, main="Conditional Boxplot of Region")
-dev.off
-#Anova's between Completion rate and all qualitative variables
-anova <- aov(C150_4~REGION, clean_data)
-=======
->>>>>>> 7956c25204b0fd4e896277e7e975418ef014449b
-
-#converting categorical columns into multiple binary columns
-clean_data=model.matrix(~., clean_data)
-clean_data=as.data.frame(clean_data)[,-1]
-
-#scaling non-categorical variables
-for (i in c(10:ncol(clean_data))){
-  clean_data[,i]=scale(clean_data[,i])
 }
 
 #clean race and income and y and x variables

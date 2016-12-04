@@ -6,6 +6,7 @@ library(glmnet)
 
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3/code/scripts")
 #clean_data=read.csv("../../data/clean_data.csv")[,-1]
+#scaled_data=read.csv("../../data/scaled_data.csv")[,-1]
 
 #Data Cleaning
 response=which(colnames(clean_data)=="UGDS_BLACK")

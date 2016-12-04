@@ -1,5 +1,5 @@
 setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3/code/scripts")
-clean_data=read.csv("../../data/clean_data.csv")[-1]
+scaled_data=read.csv("../../data/scaled_data.csv")[-1]
 library(shiny)
 source("functions.R")
 
@@ -20,7 +20,7 @@ ui <- fluidPage(
 
 server <- function(input, output){
   observeEvent(input$click,{
-    df=choosing_response(clean_data, input$radio)
+    df=choosing_response(scaled_data, input$radio)
     if(input$text=="Lasso"){
       output$variables=renderTable({lasso_select(df,input$radio,input$var_num)})
     }
@@ -39,5 +39,5 @@ shinyApp(ui = ui, server = server)
 
 
 
-df=choosing_response(clean_data, "C150_4")
-sample=forward_p(clean_data, 5)
+df=choosing_response(scaled_data, "C150_4")
+sample=forward_p(scaled_data, 5)

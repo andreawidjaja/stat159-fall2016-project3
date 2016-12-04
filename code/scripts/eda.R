@@ -296,27 +296,34 @@ dev.off()
 summary_qual <- summary(qualitative)
 
 #Table of Relative Frequency of Qualitative Variables
-#without Proportion
-freq <- ftable(table(qualitative))
-#With proportion
-prop <- prop.table(ftable(table(qualitative)))
+freq_qual <- table(clean_data$REGION)
 #---------------------------------------------------------------------------------------------------------------------------
+frequency=as.numeric(table(clean_data$REGION))
+proportions=frequency/sum(frequency)
+rownames=names(table(clean_data$REGION))
+df=data.frame(proportions, frequency)
+rownames(df)=rownames
+
+png("../../images/conditional_boxplot_region.png")
+plot(table(clean_data$REGION))
+dev.off()
 #Barchart for Region qualitative variable
 png("../../images/barchart_region.png")
-barplot(table(qualitative$REGION), main="Barchart of Region")
+barplot(table(clean_data$REGION), main="Barchart of Region")
 dev.off
-
 #Conditional Boxplots for Region qualitative vairables
-png("../../images/conditional_boxplot_gender.png")
-boxplot(C150_4 ~ REGION, data=selected_data, main="Conditional Boxplot of Region")
+png("../../images/conditional_boxplot_region.png")
+boxplot(C150_4 ~ REGION, data=clean_data, main="Conditional Boxplot of Region")
 dev.off
+#Anova's between Completion rate and all qualitative variables
+anova <- aov(C150_4 ~ REGION, clean_data)
 #===========================================================================================================================
 #Correlation Matrix
 matrix <- cor(clean_data)
 save(matrix, file = "../../data/correlation_matrix.RData")
 
 #Anova's between Completion rate and all qualitative variables
-anova <- aov(C150_4~REGION, selected_data)
+anova <- aov(C150_4 ~ REGION, clean_data)
 #===========================================================================================================================
 #Generate eda.txt for quantitative variables
 sink("../../data/eda.txt")
@@ -348,12 +355,7 @@ print(summary_qual)
 cat("\n\n")
 #Table of relative frequency without proportion
 cat("Table of Relative Frequency of qualitative variables\n\n")
-cat("without Proportion\n\n")
-print(freq)
-cat("\n\n")
-#Table of relative frequency with proportion
-cat("with Proportion\n\n")
-print(prop)
+print(freq_qual)
 cat("\n\n")
 
 cat("Additional data\n")
