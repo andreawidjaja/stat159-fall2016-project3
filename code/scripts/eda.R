@@ -346,15 +346,13 @@ cat("\n\n")
 cat("Standard Deviation of Quantitative Variables\n")
 print(quantitative_SD)
 cat("\n\n")
+
 #Summary statistics of Qualitative variables
 cat("Summary Statistics of Qualitative Variables\n")
+print(summary_qual)
 cat("\n\n")
 #Table of frequency
 cat("Table of Frequency of qualitative variables\n")
-print(summary_qual)
-cat("\n\n")
-#Table of relative frequency without proportion
-cat("Table of Relative Frequency of qualitative variables\n\n")
 print(freq_qual)
 cat("\n\n")
 
