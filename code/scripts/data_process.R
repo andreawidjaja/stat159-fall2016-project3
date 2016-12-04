@@ -3,6 +3,12 @@ args <- commandArgs(trailingOnly=TRUE)
 clean_data <- read.csv(args[1])
 
 #converting categorical columns into multiple binary columns
+clean_data[,c(18,19,23,91)]=NULL
+
+for(i in 1:ncol(clean_data)){
+  clean_data[is.na(clean_data[,i]),i]=mean(clean_data[,i], na.rm=TRUE)
+}
+
 clean_data$REGION=as.factor(clean_data$REGION)
 options(na.action='na.pass')
 temp_data=model.matrix(~., clean_data)

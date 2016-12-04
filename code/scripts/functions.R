@@ -3,12 +3,12 @@ library(glmnet)
 
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3/code/scripts")
 #clean_data=read.csv("data/clean_data.csv")[,-1]
-#scaled_data=read.csv("../../data/scaled_data.csv")[,-1]
+scaled_data=read.csv("../../data/generated_data/scaled_data.csv")[,-1]
 
 
 choosing_response=function(dataframe, character){
   response=which(colnames(dataframe)==character)
-  dataframe[,setdiff(95:101, response)]=NULL #getting rid of all graduation rates, except for black graduation rates
+  dataframe[,setdiff(90:95, response)]=NULL #getting rid of all graduation rates, except for black graduation rates
   dataframe= subset(dataframe, select=c(setdiff(1:ncol(dataframe),response), response))
   return(dataframe)
 }
