@@ -81,7 +81,7 @@ clean_data$MAIN=NULL #all of our schools are main campuses
 clean_data$CONTROL=NULL # all of our schools are public
 clean_data$PREDDEG=NULL # all values are 3, so useless variable
 clean_data[,3:7]=apply(clean_data[,3:7] , 2, as.numeric)
-
+clean_data[,c(93,94,103,104)]=NULL
 #dealing with NA values... lets replace each NA value with the column average
 
 for(i in 1:ncol(clean_data)){
