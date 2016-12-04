@@ -70,7 +70,7 @@ clean_data[,13:85]=apply(clean_data[,13:85], 2, as.numeric) #converting all sat/
 clean_data[,86:ncol(clean_data)]=apply(clean_data[,86:ncol(clean_data)], 2, as.numeric) #Converting all these factors into numeric variables
 clean_data$CURROPER=NULL #Takes on only 1 variable
 clean_data[,7:85]=apply(clean_data[,7:85], 2, as.numeric) #converting all sat/act scores and percentage of people in certain degrees into numeric variables
-clean_data[,c(86:105,107,120:139,141,151:162,164)]=NULL #Removing variables with several Null values
+clean_data<-subset(clean_data,select=-c(86:105,107,120:139,141,151:162,164)) #Removing variables with several Null values
 clean_data[,86:ncol(clean_data)]=apply(clean_data[,86:ncol(clean_data)], 2, as.numeric) #converting all these factors  into numeric variables
 clean_data$CURROPER=NULL #Takes on only 1 variable
 
@@ -93,4 +93,3 @@ write.csv(clean_data, file = 'data/clean_data.csv')
 write.csv(race_and_income, file='data/race_and_income.csv')
 write.csv(y_variables, file='data/y_variables.csv')
 write.csv(x_variables, file='data/x_variables.csv')
-
