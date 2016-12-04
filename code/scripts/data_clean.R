@@ -75,12 +75,8 @@ clean_data$UNITID=NULL
 clean_data$MAIN=NULL #all of our schools are main campuses
 clean_data$CONTROL=NULL # all of our schools are public
 clean_data$PREDDEG=NULL # all values are 3, so useless variable
-clean_data[,c(18,19,23,91)]=NULL
 #dealing with NA values... lets replace each NA value with the column average
 
-for(i in 1:ncol(clean_data)){
-  clean_data[is.na(clean_data[,i]),i]=mean(clean_data[,i], na.rm=TRUE)
-}
 
 #clean race and income and y and x variables
 write.csv(clean_data, file = 'data/generated_data/clean_data.csv')

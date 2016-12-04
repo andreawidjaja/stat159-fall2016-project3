@@ -2,6 +2,9 @@ library(shiny)
 source("functions.R")
 #read in file scaled_data.csv
 
+scaled_data=read.csv("../../data/generated_data/scaled_data.csv")[,-1]
+
+
 ui <- fluidPage(
   actionButton("click", label="Generate Relevant Variables"), #Creating an action button 
   radioButtons("text", label=h3("Variable Selection Method"), choices=list("Lasso"="Lasso", "BIC"="BIC","P-Value"="P-Value")),
