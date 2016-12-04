@@ -2,8 +2,9 @@ library(dplyr)
 library(ggplot2)
 
 #Read data sets
-clean_data <- read.csv('../../data/clean_data.csv')
-data <- read.csv('../../data/MERGED2014_15_PP.csv')
+args <- commandArgs(trailingOnly=TRUE)
+clean_data <- read.csv(args[1])
+data <- read.csv(args[2])
 
 #Selecting data
 selected_data <- data %>%
@@ -165,18 +166,18 @@ quantitative_SD <- apply(quantitative, 2, FUN=sd)
 #Histograms
 
 #histogram of average ACT scores
-png("../../images/histogram_ACT_avg.png")
+png("images/histogram_ACT_avg.png")
 hist(clean_data$ACTCMMID, main = "Histogram of Average of ACT Scores", xlab = "ACT average")
 dev.off()
 
 #histogram of average SAT scores
-png("../../images/histogram_SAT_avg.png")
+png("images/histogram_SAT_avg.png")
 hist(clean_data$SAT_AVG, main = "Histogram of Average of SAT Scores", xlab = "SAT average")
 dev.off()
 
 #histogram of percentage of degrees of different majors
 pairs_majors1 = clean_data[, c("PCIP01", "PCIP03", "PCIP04", "PCIP05", "PCIP09", "PCIP10", "PCIP11", "PCIP12", "PCIP13")]
-png("../../images/histogram_majors1.png")
+png("images/histogram_majors1.png")
 attach(pairs_majors1)
 graph_majors1 <- par(mfrow = c(3, 3))
 hist(PCIP01, xlab = "Agriculture, Agriculture Operations, and Related Sciences", main = "% of Degrees")
@@ -192,7 +193,7 @@ par(graph_majors1)
 dev.off()
 
 pairs_majors2 = clean_data[, c("PCIP14", "PCIP15", "PCIP16", "PCIP19", "PCIP22", "PCIP23", "PCIP24", "PCIP25", "PCIP26")]
-png("../../images/histogram_majors2.png")
+png("images/histogram_majors2.png")
 attach(pairs_majors2)
 graph_majors2 <- par(mfrow = c(3, 3))
 hist(PCIP14, xlab = "Engineering", main = "% of Degrees")
@@ -208,7 +209,7 @@ par(graph_majors2)
 dev.off()
 
 pairs_majors3 = clean_data[, c("PCIP27", "PCIP29", "PCIP30", "PCIP31", "PCIP38", "PCIP39", "PCIP40", "PCIP41", "PCIP42")]
-png("../../images/histogram_majors3.png")
+png("images/histogram_majors3.png")
 attach(pairs_majors3)
 graph_majors3 <- par(mfrow = c(3, 3))
 hist(PCIP27, xlab = "Mathematics and Statistics", main = "% of Degrees")
@@ -224,7 +225,7 @@ par(graph_majors3)
 dev.off()
 
 pairs_majors4 = clean_data[, c("PCIP43", "PCIP44", "PCIP45", "PCIP46", "PCIP47", "PCIP48", "PCIP49", "PCIP50", "PCIP51", "PCIP52", "PCIP54")]
-png("../../images/histogram_majors4.png")
+png("images/histogram_majors4.png")
 attach(pairs_majors4)
 graph_majors4 <- par(mfrow = c(4, 3))
 hist(PCIP43, xlab = "Homeland Security, Law Enforcement, Firefighting and Related Protective Services", main = "% of Degrees")
@@ -243,7 +244,7 @@ dev.off()
 
 #histogram of enrollment by race
 pairs_race_enrollment = clean_data[, c("UGDS_WHITE", "UGDS_BLACK", "UGDS_HISP", "UGDS_ASIAN", "UGDS_AIAN", "UGDS_NHPI")]
-png("../../images/histogram_race_enrollment.png")
+png("images/histogram_race_enrollment.png")
 attach(pairs_race_enrollment)
 graph_race_enrollment <- par(mfrow = c(3, 2))
 hist(UGDS_WHITE, xlab = "White", main = "Histogram of Share of Enrollment")
@@ -256,18 +257,18 @@ par(graph_race_enrollment)
 dev.off()
 
 #histogram of average cost per academic year
-png("../../images/histogram_net_price.png")
+png("images/histogram_net_price.png")
 hist(clean_data$COSTT4_A, main = "Histogram of Average Cost per Academic Year", xlab = "Average Cost per Academic Year")
 dev.off()
 
 #histogram of completion rate
-png("../../images/histogram_completion.png")
+png("images/histogram_completion.png")
 hist(clean_data$C150_4, main = "Histogram of Completion Rate", xlab = "Completion Rate")
 dev.off()
 
 #histogram of completion rate by income level
 pairs_income_completion = clean_data[, c("LO_INC_COMP_ORIG_YR6_RT", "MD_INC_COMP_ORIG_YR6_RT", "HI_INC_COMP_ORIG_YR6_RT")]
-png("../../images/histogram_income_graduation.png")
+png("images/histogram_income_graduation.png")
 attach(pairs_income_completion)
 graph_income_completion <- par(mfrow = c(2, 2))
 hist(LO_INC_COMP_ORIG_YR6_RT, main = "Histogram of % who Completed in 6 Years", xlab = "Low-income Families")
@@ -278,7 +279,7 @@ dev.off()
 
 #histogram of completion rate by race (black, white, hisp, asian, native american, nhpi)
 pairs_race_completion = clean_data[, c("C150_4_WHITE", "C150_4_BLACK", "C150_4_HISP", "C150_4_AIAN", "C150_4_ASIAN", "C150_4_NHPI")]
-png("../../images/histogram_race_completion")
+png("images/histogram_race_completion")
 attach(pairs_race_completion)
 graph_race_completion <- par(mfrow = c(3, 2))
 hist(C150_4_WHITE, xlab = "White", main = "Histogram of Completion Rate in 6 Years")
@@ -303,15 +304,15 @@ rownames=names(table(clean_data$REGION))
 df=data.frame(proportions, frequency)
 rownames(df)=rownames
 
-png("../../images/conditional_boxplot_region.png")
+png("images/conditional_boxplot_region.png")
 plot(table(clean_data$REGION))
 dev.off()
 #Barchart for Region qualitative variable
-png("../../images/barchart_region.png")
+png("images/barchart_region.png")
 barplot(table(clean_data$REGION), main="Barchart of Region")
 dev.off
 #Conditional Boxplots for Region qualitative vairables
-png("../../images/conditional_boxplot_region.png")
+png("images/conditional_boxplot_region.png")
 boxplot(C150_4 ~ REGION, data=clean_data, main="Conditional Boxplot of Region")
 dev.off
 #Anova's between Completion rate and all qualitative variables
@@ -319,13 +320,13 @@ anova <- aov(C150_4 ~ REGION, clean_data)
 #===========================================================================================================================
 #Correlation Matrix
 matrix <- cor(clean_data)
-save(matrix, file = "../../data/correlation_matrix.RData")
+save(matrix, file = "data/genereated_data/correlation_matrix.RData")
 
 #Anova's between Completion rate and all qualitative variables
 anova <- aov(C150_4 ~ REGION, clean_data)
 #===========================================================================================================================
 #Generate eda.txt for quantitative variables
-sink("../../data/eda.txt")
+sink("../../data/generated_data/eda.txt")
 #Summary statistics of quantitative variables
 cat("Summary Statistics of Quantitative Variables\n")
 cat("\n\n")
