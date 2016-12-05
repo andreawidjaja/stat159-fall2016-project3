@@ -1,0 +1,32 @@
+---
+title: "Final Presentation"
+author: Joseph Francia, Priscilla Hartono, Nicholas Saber, Andrea Widjaja
+date: December 6, 2016
+output: ioslides_presentation
+---
+
+# Final Project
+## Abstract
+The final project for Stat 159 consists of performing a virtual consulting data analysis project using data from College Scorecard. The underlying goal is to use all the computational tools and apply all the concepts covered in the course to create a computationally reproducible analysis.
+
+## Introduction
+Suppose we are Public Policy Researchers hired by the government. The government is interested in boosting graduation rates across the nation. However, its resources are limited, and the government is not sure how to spend its money.
+
+Our Goal:  
+- determine which variables affect a college's graduation rate the most  
+- know how the variables might change if were to look at graduation rates of people with different ehtnicities
+
+In order to answer these questions, the government wants us to build an interactive web application that allows a non-technical user to find the relevant variables for a specific ethnicity's graduation rates. 
+
+## Data
+We used data from [**College Scorecard**](https://collegescorecard.ed.gov/). College Scorecard is developed by the U.S. Department of Education (under Obama’s Administration) to provide “key indicators about the cost and value of institutions across the country to help students choose a school that is well-suited to meet their needs, priced affordably, and is consistent with their educational and career goals”.
+
+## Data (cont.)
+The dataset we chose is [**MERGED2014_15_PP.csv**](https://collegescorecard.ed.gov/data/) because it is the most recent, hence relevant to make future decisions and to understand each variable, we referred to the [**data dictionary**](https://collegescorecard.ed.gov/assets/CollegeScorecardDataDictionary-09-26-2016.xlsx)
+
+## Methodology
+
+## Analaysis
+## Results
+# Thank you!
+
