@@ -15,7 +15,7 @@ data/generated_data/clean_data.csv:
 	Rscript code/scripts/data_clean.R $(raw_data)
 
 #creates a text files with exploratory data analysis information of data set
-eda.txt: data_clean.R
+eda.txt: data/generated_data/clean_data.csv
 	Rscript code/scripts/eda.R $^ $(raw_data)
 
 
