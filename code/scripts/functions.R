@@ -50,7 +50,7 @@ forward_p<-function(data,p){
   predictors<-data[,-c(length(colnames(data)))]
   response<-data[,length(colnames(data))]
   
-  predictor<-colnames(data)[ncol(data)[2]]
+  response_name<-colnames(data)[dim(data)[2]]
   
   
   #resultant list of all models
@@ -63,7 +63,7 @@ forward_p<-function(data,p){
       #Initial loop to fill in temp1
       if (!models[1]){
         #Store t-value of regression of response variable ran on just the j'th feature of predictors
-        temp1[j]<-summary(lm(paste(predictor,"~."),data=data))$coefficients[i+1,4]
+        temp1[j]<-summary(lm(paste(response_name,"~."),data=data))$coefficients[i+1,4]
       } 
       else {
         #Skip if predictor is already in our model so far
@@ -74,17 +74,18 @@ forward_p<-function(data,p){
         }
         else {
           #Store t-value of newly added predictor variable to regression model     
-          temp1[j]<-summary(lm(paste(predictor,"~.",sep=""),data=data[,c((models[models != 0]),j,dim(data)[2])]))$coefficients[i+1,4]
+          temp1[j]<-summary(lm(paste(response_name,"~.",sep=""),data=data[,c((models[models != 0]),j,dim(data)[2])]))$coefficients[i+1,4]
         }
       }
     }
     #store the predictor whose t-value is the lowest when added to the model
     models[i]<-which.min(temp1)
   }
-  coefficients<-summary(lm(paste(predictor,"~.",sep=""),data=data[,c(models,dim(data[2]))]))$coefficients
-  names<-names(coefficients[,2])[2:p+1]
-  value<-coefficients[2:p+1,2]
-  info<-data_frame(models,names,value)
+  print("hit this")
+  coefficients<-summary(lm(paste(response_name,"~.",sep=""),data=data[,c(models,dim(data)[2])]))$coefficients
+  names<-names(coefficients[,2])[1:p+1]
+  value<-coefficients[1:p+1,2]
+  info<-data.frame(models,names,value)
   
   
   return(info)
