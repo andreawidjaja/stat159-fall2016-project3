@@ -1,7 +1,7 @@
 library(leaps)
 library(glmnet)
 
-#setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3/code/scripts")
+setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3")
 #clean_data=read.csv("data/clean_data.csv")[,-1]
 #scaled_data=read.csv("../../data/generated_data/scaled_data.csv")[,-1]
 scaled_data=read.csv("data/generated_data/scaled_data.csv")[,-1]
@@ -106,5 +106,5 @@ colnames(bic)=c("BIC Relevant Variables", "Beta Coefficients")
 p_val=forward_p(sample,5)[,c(2,3)]
 colnames(p_val)=c("P-Vals Relevant Variables", "Beta Coefficients")
 df=cbind(lasso, bic, p_val)
-#####save(df, "../../data/generated_data/df.RData")
+save(df, file="data/generated_data/df.RData")
 
