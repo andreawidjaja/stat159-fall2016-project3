@@ -39,6 +39,3 @@ shinyApp(ui = ui, server = server)
 
 
 
-
-df=choosing_response(scaled_data, "C150_4")
-sample=forward_p(scaled_data, 5)

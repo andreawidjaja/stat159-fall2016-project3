@@ -1,8 +1,8 @@
-<<setup, include=FALSE, cache=FALSE, echo=FALSE>>=
-library(knitr)
-# set global chunk options
+\documentclass{article}
 
-@
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
 
 
 \section{Methodology}
@@ -18,3 +18,5 @@ While p-values are usually associated with hypothesis testing, they can actually
 \subsection{BIC}
 BIC (Bayesian Information Criterion) is a criterion for model selection. In a subset of models, the model with the lowest BIC value is deemed the best model. BIC is composed of both a bias term and a model complexity term. As a result, in order to achieve a low BIC, a model has to do a decent job of minimizing bias without too much model complexity. While BIC is normally used for model selection, it can also do a decent job at variable selection. Using the forward stepwise selection algorithm 
 described in the previous subsection, we would sequentially add a variable to the model, and this was the variable that decreased BIC the most. We would stop adding variables to the model once they started to increase the BIC of our model. 
+
+\end{document}
