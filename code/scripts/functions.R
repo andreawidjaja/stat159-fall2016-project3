@@ -50,7 +50,7 @@ forward_p<-function(data,p){
   predictors<-data[,-c(length(colnames(data)))]
   response<-data[,length(colnames(data))]
   
-  predictor<-colnames(data)[dim(data)[2]]
+  predictor<-colnames(data)[ncol(data)[2]]
   
   
   #resultant list of all models

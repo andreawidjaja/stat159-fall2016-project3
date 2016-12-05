@@ -303,8 +303,6 @@ dev.off
 png("images/conditional_boxplot_region.png")
 boxplot(C150_4 ~ REGION, data=clean_data, main="Conditional Boxplot of Region")
 dev.off
-#Anova's between Completion rate and all qualitative variables
-anova <- aov(C150_4 ~ REGION, clean_data)
 #===========================================================================================================================
 #Correlation Matrix
 matrix <- cor(clean_data)
