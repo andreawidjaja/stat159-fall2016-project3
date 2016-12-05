@@ -95,16 +95,3 @@ forward_p<-function(data,p){
   return(info)
 }
 
-
-character="C150_4"
-dataframe=scaled_data
-sample=choosing_response(scaled_data, character)
-lasso=lasso_select(sample, character, 5)
-colnames(lasso)=c("Lasso Relevant Variables", "Beta Coefficients")
-bic=bic_select(sample, character, 5)
-colnames(bic)=c("BIC Relevant Variables", "Beta Coefficients")
-p_val=forward_p(sample,5)[,c(2,3)]
-colnames(p_val)=c("P-Vals Relevant Variables", "Beta Coefficients")
-df=cbind(lasso, bic, p_val)
-save(df, file="data/generated_data/df.RData")
-

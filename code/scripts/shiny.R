@@ -1,8 +1,7 @@
 library(shiny)
 source("code/scripts/functions.R")
-#read in file scaled_data.csv
-args <- commandArgs(trailingOnly=TRUE)
-scaled_data <- read.csv(args[1])[,-1]
+setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3")
+scaled_data=read.csv("data/generated_data/scaled_data.csv")
 
 
 ui <- fluidPage(
