@@ -2,9 +2,8 @@
 args <- commandArgs(trailingOnly=TRUE)
 clean_data <- read.csv(args[1])
 
-#converting categorical columns into multiple binary columns
-clean_data[,c(18,19,23,91)]=NULL
 
+#Replace NA's with column means
 for(i in 1:ncol(clean_data)){
   clean_data[is.na(clean_data[,i]),i]=mean(clean_data[,i], na.rm=TRUE)
 }
@@ -20,4 +19,4 @@ for (i in c(10:ncol(scaled_data))){
 }
 
 #export scaled data
-write.csv(scaled_data, file = '../../data/generated_data/scaled_data.csv')
+write.csv(scaled_data, file = 'data/generated_data/scaled_data.csv')
