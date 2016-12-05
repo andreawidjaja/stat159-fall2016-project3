@@ -1,2 +1,8 @@
-\section{Conclusion}
+\documentclass{article}
 
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+\section{Conclusion}
+As consultants hired by the U.S. government, we didn't want to just provide a static analysis that would list out the variables relevant to graduation rates. Rather, we wanted to create a dynamic web application that would allow non-technical government officials to explore education data on their own. Users merely need to input the number of relevant variables they want to look at and the type of graduation rate that they are interested in analyzing in. In addition to the simplicity of the Shiny R web application, it also has the added benefit of being reproducible. 
+
+\end{document}

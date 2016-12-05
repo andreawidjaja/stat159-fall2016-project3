@@ -24,8 +24,7 @@ quantitative <- clean_data %>%
                 NPT43_PUB, NPT44_PUB, NPT45_PUB, NUM4_PUB, NUM41_PUB, NUM42_PUB, NUM43_PUB,
                 NUM44_PUB, NUM45_PUB, COSTT4_A, TUITIONFEE_IN, TUITIONFEE_OUT, AVGFACSAL, PFTFAC, C150_4, C150_4_HISP,
                 C150_4_AIAN, C150_4_WHITE, C150_4_BLACK, C150_4_ASIAN, C150_4_NHPI, UGDS_WHITE,
-                UGDS_BLACK, UGDS_HISP, UGDS_ASIAN, UGDS_AIAN, UGDS_NHPI,
-                LO_INC_COMP_ORIG_YR6_RT, MD_INC_COMP_ORIG_YR6_RT, HI_INC_COMP_ORIG_YR6_RT)
+                UGDS_BLACK, UGDS_HISP, UGDS_ASIAN, UGDS_AIAN, UGDS_NHPI)
 
 #ADM_RATE: Admission rate
 #SATVR25: 25th percentile of SAT scores at the institution (critical reading)
@@ -157,7 +156,8 @@ quantitative_summary <- summary(quantitative)
 #range
 quantitative_range <- apply(quantitative, 2, FUN=range)
 #IQR
-quantitative_IQR <- apply(quantitative, 2, FUN=IQR)
+f_iqr<-function(x){IQR(x,na.rm=TRUE)}
+quantitative_IQR <- apply(quantitative, 2, FUN=f_iqr)
 #standard deviation
 quantitative_SD <- apply(quantitative, 2, FUN=sd)
 
@@ -265,17 +265,6 @@ png("images/histogram_completion.png")
 hist(clean_data$C150_4, main = "Histogram of Completion Rate", xlab = "Completion Rate")
 dev.off()
 
-#histogram of completion rate by income level
-pairs_income_completion = clean_data[, c("LO_INC_COMP_ORIG_YR6_RT", "MD_INC_COMP_ORIG_YR6_RT", "HI_INC_COMP_ORIG_YR6_RT")]
-png("images/histogram_income_graduation.png")
-attach(pairs_income_completion)
-graph_income_completion <- par(mfrow = c(2, 2))
-hist(LO_INC_COMP_ORIG_YR6_RT, main = "Histogram of % who Completed in 6 Years", xlab = "Low-income Families")
-hist(MD_INC_COMP_ORIG_YR6_RT, main = "Histogram of % who Completed in 6 Years", xlab = "Medium-income Families")
-hist(HI_INC_COMP_ORIG_YR6_RT, main = "Histogram of % who Completed in 6 Years", xlab = "High-income Families")
-par(graph_income_completion)
-dev.off()
-
 #histogram of completion rate by race (black, white, hisp, asian, native american, nhpi)
 pairs_race_completion = clean_data[, c("C150_4_WHITE", "C150_4_BLACK", "C150_4_HISP", "C150_4_AIAN", "C150_4_ASIAN", "C150_4_NHPI")]
 png("images/histogram_race_completion")
@@ -314,18 +303,16 @@ dev.off
 png("images/conditional_boxplot_region.png")
 boxplot(C150_4 ~ REGION, data=clean_data, main="Conditional Boxplot of Region")
 dev.off
-#Anova's between Completion rate and all qualitative variables
-anova <- aov(C150_4 ~ REGION, clean_data)
 #===========================================================================================================================
 #Correlation Matrix
 matrix <- cor(clean_data)
-save(matrix, file = "data/genereated_data/correlation_matrix.RData")
+save(matrix, file = "data/generated_data/correlation_matrix.RData")
 
 #Anova's between Completion rate and all qualitative variables
 anova <- aov(C150_4 ~ REGION, clean_data)
 #===========================================================================================================================
 #Generate eda.txt for quantitative variables
-sink("../../data/generated_data/eda.txt")
+sink("data/generated_data/eda.txt")
 #Summary statistics of quantitative variables
 cat("Summary Statistics of Quantitative Variables\n")
 cat("\n\n")
@@ -359,7 +346,7 @@ cat("Additional data\n")
 cat("\n\n")
 #Matrix of Correlation
 cat("Matrix of Correlation\n")
-print(correlation_matrix)
+print(matrix)
 cat("\n\n")
 #Anova between Completion Rate and qualitative varible
 cat("Anova's between Completion Rate and qualitative variables\n")
