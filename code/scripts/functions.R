@@ -2,13 +2,13 @@ library(leaps)
 library(glmnet)
 
 #setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3/code/scripts")
-#clean_data=read.csv("../../data/clean_data.csv")[,-1]
-#scaled_data=read.csv("../../data/scaled_data.csv")[,-1]
+#clean_data=read.csv("data/clean_data.csv")[,-1]
+scaled_data=read.csv("../../data/generated_data/scaled_data.csv")[,-1]
 
 
 choosing_response=function(dataframe, character){
   response=which(colnames(dataframe)==character)
-  dataframe[,setdiff(95:101, response)]=NULL #getting rid of all graduation rates, except for black graduation rates
+  dataframe[,setdiff(90:95, response)]=NULL #getting rid of all graduation rates, except for black graduation rates
   dataframe= subset(dataframe, select=c(setdiff(1:ncol(dataframe),response), response))
   return(dataframe)
 }
@@ -39,7 +39,6 @@ bic_select=function(dataframe, character, n){
 }
 
 
-
 #Nick, you can do the forward selection stuff with p-values. you'll have to make a function that does that since there's no built in R thing that does that
 forward_p<-function(data,p){
   #data argumented must formatted such that the last column is the response variable
@@ -48,35 +47,45 @@ forward_p<-function(data,p){
   
   
   #break data into response and predictors, 
-predictors<-data[,-c(length(colnames(data)))]
-response<-data[,length(colnames(data))]
-
-#resultant list of all models
-models<-vector(length=p)
-
-for(i in seq(1:p)) {
-  temp1<-vector(length=(length(colnames(predictors))))
+  predictors<-data[,-c(length(colnames(data)))]
+  response<-data[,length(colnames(data))]
   
-  for (j in seq(1:(length(colnames(predictors))))){
-    #Initial loop to fill in temp1
-    if (!models[1]){
-      #Store t-value of regression of response variable ran on just the j'th feature of predictors
-      temp1[j]<-summary(lm.fit(x=as.matrix(predictors[,j]),y=response))$coefficients[i+1,4]
-    } 
-    else {
-      #Skip if predictor is already in our model so far
-      if (j %in% models) {
-        #assign value of two so that which.min call won't mistake and double count predictors
-        temp1[j]<-2
-        next
-      }
+  predictor<-colnames(data)[ncol(data)[2]]
+  
+  
+  #resultant list of all models
+  models<-vector(length=p)
+  
+  for(i in seq(1:p)) {
+    temp1<-vector(length=(length(colnames(predictors))))
+    
+    for (j in seq(1:(length(colnames(predictors))))){
+      #Initial loop to fill in temp1
+      if (!models[1]){
+        #Store t-value of regression of response variable ran on just the j'th feature of predictors
+        temp1[j]<-summary(lm(paste(predictor,"~."),data=data))$coefficients[i+1,4]
+      } 
       else {
-        #Store t-value of newly added predictor variable to regression model     
-        temp1[j]<-summary(lm.fit(x=as.matrix(predictors[,c((models[models != 0]),j)]),y=response))$coefficients[i+1,4]
+        #Skip if predictor is already in our model so far
+        if (j %in% models) {
+          #assign value of two so that which.min call won't mistake and double count predictors
+          temp1[j]<-2
+          next
+        }
+        else {
+          #Store t-value of newly added predictor variable to regression model     
+          temp1[j]<-summary(lm(paste(predictor,"~.",sep=""),data=data[,c((models[models != 0]),j,dim(data)[2])]))$coefficients[i+1,4]
+        }
       }
     }
+    #store the predictor whose t-value is the lowest when added to the model
+    models[i]<-which.min(temp1)
   }
-  #store the predictor whose t-value is the lowest when added to the model
-  models[i]<-which.min(temp1)
-}}
-
+  coefficients<-summary(lm(paste(predictor,"~.",sep=""),data=data[,c(models,dim(data[2]))]))$coefficients
+  names<-names(coefficients[,2])[2:p+1]
+  value<-coefficients[2:p+1,2]
+  info<-data_frame(models,names,value)
+  
+  
+  return(info)
+}

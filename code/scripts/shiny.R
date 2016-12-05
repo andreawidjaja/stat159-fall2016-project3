@@ -1,8 +1,9 @@
-setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3/code/scripts")
-scaled_data=read.csv("../../data/scaled_data.csv")[-1]
 library(shiny)
 source("functions.R")
 #read in file scaled_data.csv
+
+scaled_data=read.csv("../../data/generated_data/scaled_data.csv")[,-1]
+
 
 ui <- fluidPage(
   actionButton("click", label="Generate Relevant Variables"), #Creating an action button 
