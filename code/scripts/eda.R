@@ -267,7 +267,7 @@ dev.off()
 
 #histogram of completion rate by race (black, white, hisp, asian, native american, nhpi)
 pairs_race_completion = clean_data[, c("C150_4_WHITE", "C150_4_BLACK", "C150_4_HISP", "C150_4_AIAN", "C150_4_ASIAN", "C150_4_NHPI")]
-png("images/histogram_race_completion")
+png("images/histogram_race_completion.png")
 attach(pairs_race_completion)
 graph_race_completion <- par(mfrow = c(3, 2))
 hist(C150_4_WHITE, xlab = "White", main = "Histogram of Completion Rate in 6 Years")
