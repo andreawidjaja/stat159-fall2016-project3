@@ -4,23 +4,16 @@
 \begin{document}
 \input{05_results-concordance}
 
+
 \section{Results}
-<<<<<<< HEAD
-Once we figured out which variable selection methods we wanted to use and how we wanted to use them, we were then able to implement them using a Shiny R App. Our Shiny R App requires the following information from the user in order to run:\\
+Once we figured out which variable selection methods we wanted to use and how we wanted to use them, we were then able to implement them using a Shiny R App. A screenshot of the Shiny R app below shows exactly the options that a user has when running the web application:\\\\\\
 
-1) Type of Variable Selection Method\\
-2) Type of Graduation Rate\\
-3) Number of Relevant Variables to Output\\
+\begin{figure}[!htb]
+\includegraphics{../../images/screenshot.png}
+\end{figure}
 
-The Shiny R App will then output the specified number of relevant variables for the specified graduation rate. For instance, lets say we were interested in finding the 5 most relevant explanatory variables for the overall graduation rate. Then, we would get the following output if we were to use all 3 variable selection methods:\\
-=======
-Once we figured out which variable selection methods we wanted to use and how we wanted to use them, we were then able to implement them using a Shiny R App. Our Shiny R App requires the following information from the user in order to run:
 
-1) Type of Variable Selection Method
-2) Type of Graduation Rate
-3) Number of Relevant Variables to Output
+The Shiny R App will then output the specified number of relevant variables for the specified graduation rate. For instance, lets say we were interested in finding the 5 most relevant explanatory variables for the overall graduation rate. Then, we could get 3 sets of 5 explanatory variables (one set for each variable selection method). It turns out that the only explanatory variable that appears in all 3 variable selection methods is the SAT average variable, which has a strong positive effect on graduation rates. This makes sense because intuitively, SAT scores have a strong correlation with high academic performance, which is essential to graduating. 
+\end{document}
 
-The Shiny R App will then output the specified number of relevant variables for the specified graduation rate. For instance, lets say we were interested in finding the 5 most relevant explanatory variables for the overall graduation rate. Then, we would get the following output if we were to use all 3 variable selection methods:
-
->>>>>>> 5a31118e9819944f44f2c4d3acdbfc2e1a96aeeb
 
