@@ -5,7 +5,6 @@ raw_data = data/input_data/MERGED2014_15_PP.csv
 #Phony data target to make clean data
 data: data/generated_data/clean_data.csv data/generated_data/scaled_data.csv
 
-
 #runs script that scales data
 data/generated_data/scaled_data.csv: data/generated_data/clean_data.csv
 	Rscript code/scripts/data_process.R $^

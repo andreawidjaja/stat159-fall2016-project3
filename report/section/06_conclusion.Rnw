@@ -1,2 +1,8 @@
-\section{Conclusion}
+\documentclass{article}
 
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+\section{Conclusion}
+As consultants hired by the U.S. government, we didn't want to just provide a static analysis that would list out the variables relevant to graduation rates. Rather, we wanted to create a dynamic web application that would allow non-technical government officials to explore education data on their own. Users merely need to input the number of relevant variables they want to look at and the type of graduation rate that they are interested in analyzing. In addition to simplicity, the Shiny R Web app has the added benefit of providing reproducible analysis with different datasets. For instance, in the context of this project, the Shiny R App deals with data from the 2014-2015 academic year. However, if the U.S. government a few years from now were interested in the 2017-2018 academic year, the government could also use our web application to analyze the relevant variables for graduation rates in that academic year. The reproducibility of our Shiny R App is, in my opinion, its strongest suit, and will allow it to be relevant for our government clients for years to come.
+
+\end{document}

@@ -1,8 +1,8 @@
 library(shiny)
-source("functions.R")
+source("code/scripts/functions.R")
 #read in file scaled_data.csv
-
-scaled_data=read.csv("../../data/generated_data/scaled_data.csv")[,-1]
+args <- commandArgs(trailingOnly=TRUE)
+scaled_data <- read.csv(args[1])[,-1]
 
 
 ui <- fluidPage(
@@ -39,6 +39,3 @@ shinyApp(ui = ui, server = server)
 
 
 
-
-df=choosing_response(scaled_data, "C150_4")
-sample=forward_p(scaled_data, 5)
