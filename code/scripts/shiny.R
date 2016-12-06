@@ -1,6 +1,6 @@
 library(shiny)
-source("functions.R")
-scaled_data=read.csv("../../data/generated_data/scaled_data.csv")
+source("code/scripts/functions.R")
+scaled_data=read.csv("data/generated_data/scaled_data.csv")
 
 
 ui <- fluidPage(
