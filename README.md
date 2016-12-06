@@ -16,7 +16,9 @@ The structure of the project will be as follows:
 		* functions
 		* scripts
 		* tests
-	* data
+	* data  
+		* input_data
+		* generated_data
 	* images
 	* report
 		* report.pdf
@@ -24,14 +26,13 @@ The structure of the project will be as follows:
 		* sections
 	* slides
 
-To reproduce, clone this repo, download the dataset MERGED2014_15_PP.csv, and run with make.
 
 A list of Make commands for targets are below:
 
 * all
-  * produces entire report
+  * produces entire report by running data, eda.txt, report, slides, and session
 * data
-	* processes data and cleans it
+	* processes data and cleans it into two files called clean_data.csv and scaled_data.csv
 * eda.txt
 	* produces a text with exploratory data analysis results, must be run after make data 
 * slides
@@ -44,5 +45,10 @@ A list of Make commands for targets are below:
 	* produces all relevant information regarding packages and the current session to stdout
 * clean
 	* cleans up all generated data from project
+
+	
+License
+--
+There is a LICENSE file containing relevant legal information about this product.
 
 
