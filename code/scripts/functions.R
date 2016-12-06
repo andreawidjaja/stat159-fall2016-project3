@@ -85,7 +85,6 @@ forward_p<-function(data,p){
     #store the predictor whose t-value is the lowest when added to the model
     models[i]<-which.min(temp1)
   }
-  print("hit this")
   coefficients<-summary(lm(paste(response_name,"~.",sep=""),data=data[,c(models,dim(data)[2])]))$coefficients
   names<-names(coefficients[,2])[1:p+1]
   value<-coefficients[1:p+1,2]

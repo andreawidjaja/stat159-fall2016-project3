@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  5 DEC 2016 11:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  5 DEC 2016 17:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -276,42 +276,30 @@ Package pdftex.def Info: ../../images/histogram_SAT_avg.png used on input line
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../../i
 mages/histogram_SAT_avg.png>]
-<../../images/histogram_race_enrollment.png, id=15, 481.8pt x 481.8pt>
-File: ../../images/histogram_race_enrollment.png Graphic file (type png)
-
-<use ../../images/histogram_race_enrollment.png>
-Package pdftex.def Info: ../../images/histogram_race_enrollment.png used on inp
-ut line 23.
-(pdftex.def)             Requested size: 276.00105pt x 276.01096pt.
-
-<../../images/histogram_race_completion.png, id=16, 481.8pt x 481.8pt>
+<../../images/histogram_race_completion.png, id=13, 481.8pt x 481.8pt>
 File: ../../images/histogram_race_completion.png Graphic file (type png)
 
 <use ../../images/histogram_race_completion.png>
 Package pdftex.def Info: ../../images/histogram_race_completion.png used on inp
-ut line 27.
+ut line 24.
 (pdftex.def)             Requested size: 276.00105pt x 276.01096pt.
- [2 <../../images/histogram_race_enrollment.png>] [3 <../../images/histogram_ra
-ce_completion.png>]
-(./02_data.aux) ) 
+ [2 <../../images/histogram_race_completion.png>] (./02_data.aux) ) 
 Here is how much of TeX's memory you used:
- 2657 strings out of 493014
- 38687 string characters out of 6133351
+ 2652 strings out of 493014
+ 38471 string characters out of 6133351
  90592 words of memory out of 5000000
- 6166 multiletter control sequences out of 15000+600000
+ 6162 multiletter control sequences out of 15000+600000
  11195 words of font info for 25 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,5n,23p,582b,222s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr7.pfb>
-Output written on 02_data.pdf (3 pages, 111642 bytes).
+ 37i,5n,23p,583b,222s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on 02_data.pdf (2 pages, 75215 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 29 PDF objects out of 1000 (max. 8388607)
+ 16 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 20 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 15 words of extra memory for PDF output out of 10000 (max. 10000000)
 

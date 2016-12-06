@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  5 DEC 2016 17:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  5 DEC 2016 17:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**05_results.tex
-(./05_results.tex
+**Report.tex
+(./Report.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
@@ -176,8 +176,8 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 105.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-)))) (./05_results.aux)
-\openout1 = `05_results.aux'.
+)))) (./Report.aux)
+\openout1 = `Report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
@@ -193,7 +193,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 4.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 4.
- (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 4.
@@ -258,37 +259,73 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-(./05_results-concordance.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
+(./Report-concordance.tex)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 10.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 10.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 10.
+
+Overfull \hbox (11.20486pt too wide) in paragraph at lines 10--10
+ [][] 
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 24.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 24.
+[1
+
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<../images/histogram_SAT_avg.png, id=12, 481.8pt x 481.8pt>
+File: ../images/histogram_SAT_avg.png Graphic file (type png)
+
+<use ../images/histogram_SAT_avg.png>
+Package pdftex.def Info: ../images/histogram_SAT_avg.png used on input line 31.
+
+(pdftex.def)             Requested size: 276.00105pt x 276.01096pt.
+
+<../images/histogram_race_completion.png, id=14, 481.8pt x 481.8pt>
+File: ../images/histogram_race_completion.png Graphic file (type png)
+
+<use ../images/histogram_race_completion.png>
+Package pdftex.def Info: ../images/histogram_race_completion.png used on input 
+line 38.
+(pdftex.def)             Requested size: 276.00105pt x 276.01096pt.
+ [2 <../images/histogram_SAT_avg.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
-<../../images/screenshot.png, id=2, 519.9425pt x 645.41125pt>
-File: ../../images/screenshot.png Graphic file (type png)
+[3 <../images/histogram_race_completion.png>] [4]
+<../images/screenshot.png, id=28, 519.9425pt x 645.41125pt>
+File: ../images/screenshot.png Graphic file (type png)
 
-<use ../../images/screenshot.png>
-Package pdftex.def Info: ../../images/screenshot.png used on input line 12.
+<use ../images/screenshot.png>
+Package pdftex.def Info: ../images/screenshot.png used on input line 68.
 (pdftex.def)             Requested size: 276.00105pt x 342.59814pt.
- [1
-
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../../i
-mages/screenshot.png>] [2]
-(./05_results.aux) ) 
+ [5] [6 <../images/screenshot.png>] (./Report.aux) ) 
 Here is how much of TeX's memory you used:
- 2645 strings out of 493014
- 38234 string characters out of 6133351
- 89592 words of memory out of 5000000
- 6156 multiletter control sequences out of 15000+600000
- 11195 words of font info for 25 fonts, out of 8000000 for 9000
+ 2694 strings out of 493014
+ 38894 string characters out of 6133351
+ 92592 words of memory out of 5000000
+ 6181 multiletter control sequences out of 15000+600000
+ 22595 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,5n,23p,678b,222s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb>
-Output written on 05_results.pdf (2 pages, 99561 bytes).
+ 37i,6n,23p,1186b,222s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2016/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr7.pfb>
+Output written on Report.pdf (6 pages, 202731 bytes).
 PDF statistics:
- 23 PDF objects out of 1000 (max. 8388607)
- 13 compressed objects within 1 object stream
+ 59 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 10 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 20 words of extra memory for PDF output out of 10000 (max. 10000000)
 
