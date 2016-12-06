@@ -1,6 +1,8 @@
-.PHONY: clean all data app slides report
+.PHONY: clean all data app slides report all
 #Input data to be cleaned
 raw_data = data/input_data/MERGED2014_15_PP.csv
+
+all: data eda.txt slides report session
 
 #Phony data target to make clean data
 data: data/generated_data/clean_data.csv data/generated_data/scaled_data.csv
@@ -40,4 +42,3 @@ clean:
 	rm *tex
 	rm *.pdf
 	rm *.html
-	
