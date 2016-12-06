@@ -16,13 +16,13 @@ Because the data has so many variables, there are quite a few redundancies in th
 \includegraphics{../../images/histogram_SAT_avg.png}
 \end{figure}
 
-Our response variable, meanwhile, is graduation rate rate and for further analysis we included the graduation rates specific to an ethnicity (Black, Asian, Hispanic, etc.). Below, I've show histograms for the graduation rates for each enthnicity:
+Our response variable, meanwhile, is graduation rate rate and for further analysis we included the graduation rates specific to an ethnicity (Black, Asian, Hispanic, etc.). Below, we show histograms for the graduation rates for each enthnicity:
 
 
 \begin{figure}[!htb]
 \includegraphics{../../images/histogram_race_completion.png}
 \end{figure}
 
-While the above histograms are important, we're not merely interested in pointing out the differences in graduation rates between ethnicities. Rather, we're interested in finding the variables that motivate these differences. In the next section, I'll discuss the specific methods that we used for variable selection.
+While the above histograms are important, we are not merely interested in pointing out the differences in graduation rates between ethnicities. Rather, we're interested in finding the variables that motivate these differences. In the next section, we will discuss the specific methods that we used for variable selection.
 
 \end{document}
