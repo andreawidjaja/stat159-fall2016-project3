@@ -1,4 +1,4 @@
-.PHONY: clean all data
+.PHONY: clean all data app
 #Input data to be cleaned
 raw_data = data/input_data/MERGED2014_15_PP.csv
 
@@ -17,6 +17,9 @@ data/generated_data/clean_data.csv:
 eda.txt: data/generated_data/clean_data.csv
 	Rscript code/scripts/eda.R $^ $(raw_data)
 
+
+app:
+	Rscript code/scripts/shiny.R
 
 #generates session information to stdout
 session:
