@@ -12,5 +12,7 @@ code/scripts output from eda.R
 * histogram_majors3.png
 * histogram_majors4.png
 * histogram_net_price.png
-* histogram_race_completion
+* histogram_race_completion.png
 * histogram_race_enrollment.png
+
+* screenshot.png
