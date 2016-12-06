@@ -86,7 +86,7 @@ If a subset of these variables appear in all 3 of our models, we can identify th
 
 ## Results
 Once we figured out which variable selection methods we wanted to use and how we wanted to use them, we were then able to implement them using a Shiny R App. The Shiny R App will then output the specified number of relevant variables for the specified graduation rate.
-<img src="..//images/screenshot.png"  height="550px"/>
+<img src="images/screenshot.png"  height="550px"/>
 
 # Thank you!
 

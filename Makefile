@@ -18,9 +18,9 @@ eda.txt: data/generated_data/clean_data.csv
 	Rscript code/scripts/eda.R $^ $(raw_data)
 
 slides:
-	Rscript -e "require(knitr); require(markdown); knit('slides/slide.Rmd', 'slide.md')"
+	Rscript -e "require(knitr); require(markdown); knit('slides/slide.Rmd')"
 	pandoc slide.md -o slides.html
-	rm slides.md
+	rm slide.md
 
 report:
 	cd report; Rscript -e "require(knitr); require(markdown); knit('Report.Rnw')"
