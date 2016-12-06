@@ -1,4 +1,4 @@
-.PHONY: clean all data app
+.PHONY: clean all data app slides report
 #Input data to be cleaned
 raw_data = data/input_data/MERGED2014_15_PP.csv
 
@@ -17,6 +17,15 @@ data/generated_data/clean_data.csv:
 eda.txt: data/generated_data/clean_data.csv
 	Rscript code/scripts/eda.R $^ $(raw_data)
 
+slides:
+	Rscript -e "require(knitr); require(markdown); knit('slides/slide.Rmd', 'slide.md')"
+	pandoc slide.md -o slides.html
+	rm slides.md
+
+report:
+	cd report; Rscript -e "require(knitr); require(markdown); knit('Report.Rnw')"
+	cd report; pandoc Report.tex -o report.pdf
+	cd report; rm Report.tex
 
 app:
 	Rscript code/scripts/shiny.R
