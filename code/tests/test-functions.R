@@ -1,6 +1,7 @@
 library(testthat)
-scaled_data=read.csv("../../data/generated_data/scaled_data.csv")[,-1]
-source("../../code/scripts/functions.R")
+#setwd("/Users/josephfrancia/Desktop/Fall_2016/Stats159/stat159-fall2016-project3")
+scaled_data=read.csv("data/generated_data/scaled_data.csv")[,-1]
+source("code/scripts/functions.R")
 
 
 context("Choosing Response Function") 
