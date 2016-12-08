@@ -89,12 +89,12 @@ If a subset of these variables appear in all 3 of our models, we can identify th
 Lets say we have a $50 million discretionary budget to spend on boosting graduation rates. And lets say that we want to spend our budget on just one or two categories. Which categoriesshould we spend money on? Since there are over a hundred possible categories or explanatory variables, we can use the Shiny R App to help narrow the focus of the U.S. Education Department. The government officials can then conduct additional research on the reduced set of variables in order to determine which ones are worth spending money on. 
 
 ## Results (Lasso)
-![Lasso's Variables](/images/Lasso)
+![Lasso's Variables](images/Lasso.png)
 
 ## Results (BIC)
-![BIC's Variables](/images/BIC)
+![BIC's Variables](images/BIC.png)
 
 ## Results (P-Values)
-![P-Values' Variables](/images/P-Values)
+![P-Values' Variables](images/P-Values.png)
 
 # Thank you! Does anyone have any questions? 
