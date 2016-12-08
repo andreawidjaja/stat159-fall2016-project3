@@ -63,7 +63,7 @@ In order to find the variable with the 2nd most explanatory power, we can run p-
 We can iterate this process until we're satisfied with the number of relevant explanatory variables we have.
 
 ## BIC
-BIC (Bayesian Information Criterion) is a criterion for model selection in whcih in a subset of models, the model with the lowest BIC value is deemed the best model.  
+BIC (Bayesian Information Criterion) is a criterion for model selection in which in a subset of models, the model with the lowest BIC value is deemed the best model.  
 
 BIC is composed of both a bias term and a model complexity term. As a result, in order to achieve a low BIC, a model has to do a decent job of minimizing bias without too much model complexity.  
 
