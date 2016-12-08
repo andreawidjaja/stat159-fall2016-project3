@@ -1,6 +1,33 @@
-<h2 id="abstract">Abstract</h2>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Joseph Francia, Priscilla Hartono, Nicholas Saber, Andrea Widjaja" />
+  <title>Final Presentation</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Final Presentation</h1>
+  <p class="author">
+Joseph Francia, Priscilla Hartono, Nicholas Saber, Andrea Widjaja
+  </p>
+  <p class="date">December 6, 2016</p>
+</div>
+<div id="abstract" class="slide section level2">
+<h1>Abstract</h1>
 <p>The final project for Stat 159 consists of performing a virtual consulting data analysis project using data from College Scorecard. The underlying goal is to use all the computational tools and apply all the concepts covered in the course to create a computationally reproducible analysis.</p>
-<h2 id="profile">Profile</h2>
+</div>
+<div id="profile" class="slide section level2">
+<h1>Profile</h1>
 <p>Suppose we are Public Policy Researchers hired by the government. The government is interested in boosting graduation rates across the nation. However, its resources are limited, and the government is not sure how to spend its money.</p>
 <p>Our Goal:</p>
 <ul>
@@ -8,40 +35,78 @@
 <li><p>know how the variables might change if were to look at graduation rates of people with different ehtnicities</p></li>
 </ul>
 <p>In order to answer these questions, the government wants us to build an interactive web application that allows a non-technical user to find the relevant variables for a specific ethnicity's graduation rates.</p>
-<h2 id="data">Data</h2>
+</div>
+<div id="data" class="slide section level2">
+<h1>Data</h1>
 <p>We used data from https://collegescorecard.ed.gov/ . College Scorecard is developed by the U.S. Department of Education (under Obama’s Administration) to provide “key indicators about the cost and value of institutions across the country to help students choose a school that is well-suited to meet their needs, priced affordably, and is consistent with their educational and career goals”.</p>
 <p>The dataset we chose is <a href="https://collegescorecard.ed.gov/data/"><strong>MERGED2014_15_PP.csv</strong></a> because it is the most recent, hence relevant to make future decisions and to understand each variable, we referred to the <a href="https://collegescorecard.ed.gov/assets/CollegeScorecardDataDictionary-09-26-2016.xlsx"><strong>data dictionary</strong></a></p>
-<h2 id="methodology">Methodology</h2>
-<p>Our first step is data cleaning. From the variables, we selected variables that are m ost relevant to achieve our goal, and removed variables with NULL values.</p>
+</div>
+<div id="methodology" class="slide section level2">
+<h1>Methodology</h1>
+<p>Our first step is data cleaning. From the variables, we selected variables that are most relevant to achieve our goal, and removed variables with NULL values.</p>
 <p>We will discuss 3 variable selection methods:</p>
 <ul>
 <li><p>Lasso Regression</p></li>
 <li><p>P-Values</p></li>
 <li><p>Bayesian Information Criterion</p></li>
 </ul>
-<h2 id="lasso-regression">Lasso Regression</h2>
+</div>
+<div id="lasso-regression" class="slide section level2">
+<h1>Lasso Regression</h1>
 <p>Lasso Regression is essentially just a slight modification of Least-Squares Regression. In Least-Squares, the optimal solution is the beta vector that minimizes the sum of squared residuals.</p>
 <p>The optimal solution for Lasso is the beta vector that minimizes both the sum of squared residuals (bias) and the absolute norm of the beta vector (model complexity).</p>
 <p>The solution to Lasso has the added benefit of setting multiple beta coefficients equal to zero.</p>
 <p>The variables that correspond to these beta coefficients of zero are usually interpreted as having a minimal impact on the response variable.</p>
-<h2 id="p-values-forward-stepwise-selection">P-Values (forward stepwise selection)</h2>
+</div>
+<div id="p-values-forward-stepwise-selection" class="slide section level2">
+<h1>P-Values (forward stepwise selection)</h1>
 <p>While p-values are usually associated with hypothesis testing, they can actually also be used for variable selection as well. For instance, imagine that we're in the linear regression setting where we have p explanatory variables, n observations, and one response variable y.</p>
 <p>We run p regressions where we regress y individually on every single explanatory variable to find the variable with the most explanatory power.</p>
 <p>We then compare these p regressions and select the variable with the beta coefficient that has the smallest p-value. Lets call this variable X1.</p>
 <p>In order to find the variable with the 2nd most explanatory power, we can run p-1 regressions where we regress y on X1 and a second explanatory variable. We then select the variable with the beta coefficient that has the smallest p-value. This variable can be interpreted as the second most important explanatory variable.</p>
 <p>We can iterate this process until we're satisfied with the number of relevant explanatory variables we have.</p>
-<h2 id="bic">BIC</h2>
+</div>
+<div id="bic" class="slide section level2">
+<h1>BIC</h1>
 <p>BIC (Bayesian Information Criterion) is a criterion for model selection in whcih in a subset of models, the model with the lowest BIC value is deemed the best model.</p>
 <p>BIC is composed of both a bias term and a model complexity term. As a result, in order to achieve a low BIC, a model has to do a decent job of minimizing bias without too much model complexity.</p>
 <p>While BIC is normally used for model selection, it can also do a decent job at variable selection.</p>
 <p>Using the forward stepwise selection algorithm, we would sequentially add a variable to the model, and this was the variable that decreased BIC the most.</p>
 <p>We would stop adding variables to the model once they started to increase the BIC of our model.</p>
-<h2 id="analaysis">Analaysis</h2>
-<p>We could see how each model (Lasso, P Value-based forward selection, BIC-based forward selection) performs from a predictive standpoint and use the model that has the most predictive power.</p>
+</div>
+<div id="analysis" class="slide section level2">
+<h1>Analysis</h1>
+<p>How do we know which model performs best from a variable selection standpoint? We could see how each model (Lasso, P Value-based forward selection, BIC-based forward selection) performs from a predictive standpoint and use the model that has the most predictive power.</p>
 <p>However, the model that has the most predictive power is not necessarily the model that is the best at variable selection. The optimal model for variable selection is the model that is able to most accurately estimate beta coefficients for our explanatory variables.</p>
 <p>Unfortunately, given that we don't know each explanatory variable's true effect on graduation rate, there is no way for us to check how accurate our beta coefficient estimates are. As a result, there's no simple way for us to pick the model that is the best at variable selection.</p>
 <p>We will use all of 3 of our models. Each model will identify a set of relevant explanatory variables.</p>
 <p>If a subset of these variables appear in all 3 of our models, we can identify these variables as extremely relevant to graduation rates. Our Shiny R app will help us find the relevant variables for graduation rates.</p>
-<h2 id="results">Results</h2>
-<p>Once we figured out which variable selection methods we wanted to use and how we wanted to use them, we were then able to implement them using a Shiny R App. The Shiny R App will then output the specified number of relevant variables for the specified graduation rate. <img src="images/screenshot.png"  height="550px"/></p>
-<h1 id="thank-you">Thank you!</h1>
+</div>
+<div id="results" class="slide section level2">
+<h1>Results</h1>
+<p>Lets say we have a $50 million discretionary budget to spend on boosting graduation rates. And lets say that we want to spend our budget on just one or two categories. Which categoriesshould we spend money on? Since there are over a hundred possible categories or explanatory variables, we can use the Shiny R App to help narrow the focus of the U.S. Education Department. The government officials can then conduct additional research on the reduced set of variables in order to determine which ones are worth spending money on.</p>
+</div>
+<div id="results-lasso" class="slide section level2">
+<h1>Results (Lasso)</h1>
+<div class="figure">
+<img src="/images/Lasso" alt="Lasso&#39;s Variables" />
+<p class="caption">Lasso's Variables</p>
+</div>
+</div>
+<div id="results-bic" class="slide section level2">
+<h1>Results (BIC)</h1>
+<div class="figure">
+<img src="/images/BIC" alt="BIC&#39;s Variables" />
+<p class="caption">BIC's Variables</p>
+</div>
+</div>
+<div id="results-p-values" class="slide section level2">
+<h1>Results (P-Values)</h1>
+<div class="figure">
+<img src="/images/P-Values" alt="P-Values&#39; Variables" />
+<p class="caption">P-Values' Variables</p>
+</div>
+</div>
+<div id="thank-you-does-anyone-have-any-questions" class="titleslide slide section level1"><h1>Thank you! Does anyone have any questions?</h1></div>
+</body>
+</html>

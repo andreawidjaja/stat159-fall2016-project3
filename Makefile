@@ -22,7 +22,7 @@ eda.txt: data/generated_data/clean_data.csv
 #generate  slides using files from slide directory
 slides:
 	Rscript -e "require(knitr); require(markdown); knit('slides/slide.Rmd')"
-	pandoc slide.md -o slides.html
+	pandoc -s -t slidy slide.md -o slides.html
 	rm slide.md
 
 #generate report from files inside report directory
