@@ -10,6 +10,7 @@ scaled_data=read.csv("data/generated_data/scaled_data.csv")[,-1]
 choosing_response=function(dataframe, character){
   response=which(colnames(dataframe)==character)
   dataframe[,setdiff(93:99, response)]=NULL #getting rid of all graduation rates, except for black graduation rates
+  response=which(colnames(dataframe)==character)
   dataframe= subset(dataframe, select=c(setdiff(1:ncol(dataframe),response), response))
   return(dataframe)
 }

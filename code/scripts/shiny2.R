@@ -1,6 +1,7 @@
 library(shiny)
 
 ui <- fluidPage(
+
   actionButton("click1", label="Generate Project Proposal "), #Creating an action button 
   actionButton("click2", label="Generate Group Members' Names "), #Creating an action button 
   textOutput("proposal"),
@@ -10,7 +11,7 @@ ui <- fluidPage(
 
 
 server <- function(input, output){
-  observeEvent(input$click2,{output$names=renderText({print("Joseph Francia, Nicholas Saber, Andrea Widjaja, Priscilla Hartono")})})
+  observeEvent(input$click2,{output$names=renderText({print("The Reproducibilibuddies: Joseph Francia, Nicholas Saber, Andrea Widjaja, Priscilla Hartono")})})
   
   observeEvent(input$click1,{output$proposal=renderText({print("We are consultants hired by the government 
   with the task of finding the relevant explanatory variables for graduation rates in public schools.")})})

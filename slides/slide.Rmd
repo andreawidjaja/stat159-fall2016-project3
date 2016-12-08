@@ -31,7 +31,7 @@ We used data from https://collegescorecard.ed.gov/ . College Scorecard is develo
 The dataset we chose is [**MERGED2014_15_PP.csv**](https://collegescorecard.ed.gov/data/) because it is the most recent, hence relevant to make future decisions and to understand each variable, we referred to the [**data dictionary**](https://collegescorecard.ed.gov/assets/CollegeScorecardDataDictionary-09-26-2016.xlsx)
 
 ## Methodology  
-Our first step is data cleaning. From the variables, we selected variables that are m ost relevant to achieve our goal, and removed variables with NULL values.  
+Our first step is data cleaning. From the variables, we selected variables that are most relevant to achieve our goal, and removed variables with NULL values.  
 
 We will discuss 3 variable selection methods:  
 
@@ -73,7 +73,8 @@ Using the forward stepwise selection algorithm, we would sequentially add a vari
 
 We would stop adding variables to the model once they started to increase the BIC of our model. 
 
-## Analaysis
+## Analysis
+How do we know which model performs best from a variable selection standpoint? 
 We could see how each model (Lasso, P Value-based forward selection, BIC-based forward selection) performs from a predictive standpoint and use the model that has the most predictive power.  
 
 However, the model that has the most predictive power is not necessarily the model that is the best at variable selection. The optimal model for variable selection is the model that is able to most accurately estimate beta coefficients for our explanatory variables.  
@@ -85,8 +86,6 @@ We will use all of 3 of our models. Each model will identify a set of relevant e
 If a subset of these variables appear in all 3 of our models, we can identify these variables as extremely relevant to graduation rates. Our Shiny R app will help us find the relevant variables for graduation rates.  
 
 ## Results
-Once we figured out which variable selection methods we wanted to use and how we wanted to use them, we were then able to implement them using a Shiny R App. The Shiny R App will then output the specified number of relevant variables for the specified graduation rate.
-<img src="images/screenshot.png"  height="550px"/>
+Lets say we have a $50 million discretionary budget to spend on boosting graduation rates. And lets say that we want to spend our budget on just one or two categories. Which categoriesshould we spend money on? Since there are over a hundred possible categories or explanatory variables, we can use the Shiny R App to help narrow the focus of the U.S. Education Department. The government officials can then conduct additional research on the reduced set of variables in order to determine which ones are worth spending money on. 
 
-# Thank you!
-
+# Thank you! Does anyone have any questions? 
